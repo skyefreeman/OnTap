@@ -10,29 +10,34 @@ import UIKit
 
 public extension UIView {
     
-    func onTapRecognized(completion: @escaping ot_viewClosure) {
+    func onTapRecognized(completion: @escaping ot_viewClosure) -> UIView {
         isUserInteractionEnabled = true
         touchHandler.onTapRecognized = completion
+        return self
     }
     
-    func onLeftSwipeRecognized(completion: @escaping ot_viewClosure) {
+    func onLeftSwipeRecognized(completion: @escaping ot_viewClosure) -> UIView {
         isUserInteractionEnabled = true
         touchHandler.onLeftSwipeRecognized = completion
+        return self
     }
     
-    func onRightSwipeRecognized(completion: @escaping ot_viewClosure) {
+    func onRightSwipeRecognized(completion: @escaping ot_viewClosure) -> UIView {
         isUserInteractionEnabled = true
         touchHandler.onRightSwipeRecognized = completion
+        return self
     }
     
-    func onUpSwipeRecognized(completion: @escaping ot_viewClosure) {
+    func onUpSwipeRecognized(completion: @escaping ot_viewClosure) -> UIView {
         isUserInteractionEnabled = true
         touchHandler.onUpSwipeRecognized = completion
+        return self
     }
     
-    func onDownSwipeRecognized(completion: @escaping ot_viewClosure) {
+    func onDownSwipeRecognized(completion: @escaping ot_viewClosure) -> UIView {
         isUserInteractionEnabled = true
         touchHandler.onDownSwipeRecognized = completion
+        return self
     }
     
     // MARK: Private

@@ -11,11 +11,11 @@ import UIKit
 internal class UIBarButtonItemTouchHandler: NSObject {
     
     private var barButtonItem: UIBarButtonItem
-    var onTouch: ot_standardClosure?
+    var onTap: ot_barButtonItemClosure?
     
-    init(barButtonItem: UIBarButtonItem, onTouch: ot_standardClosure?) {
+    init(barButtonItem: UIBarButtonItem, onTap: ot_barButtonItemClosure?) {
         self.barButtonItem = barButtonItem
-        self.onTouch = onTouch
+        self.onTap = onTap
         super.init()
         
         self.barButtonItem.target = self
@@ -28,6 +28,6 @@ internal class UIBarButtonItemTouchHandler: NSObject {
     }
     
     @objc private func barButtonItemTouched(sender: Any) {
-        onTouch?()
+        onTap?(barButtonItem)
     }
 }

@@ -8,3 +8,5 @@
 
 public typealias ot_standardClosure = (Void) -> Void
 public typealias ot_viewClosure = (UIView) -> Void
+public typealias ot_controlClosure = (UIControl) -> Void
+public typealias ot_barButtonItemClosure = (UIBarButtonItem) -> Void
