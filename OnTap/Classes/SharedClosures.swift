@@ -6,7 +6,5 @@
 //
 //
 
-import Foundation
-
-typealias StandardClosure = (Void) -> Void
-typealias ViewClosure = (UIView) -> Void
+public typealias ot_standardClosure = (Void) -> Void
+public typealias ot_viewClosure = (UIView) -> Void
