@@ -8,110 +8,96 @@
 
 import UIKit
 
+// MARK: OnTap
+
 public extension UIControl {
     
-    func onTouchDown(completion: @escaping ot_controlClosure) -> UIControl {
+    func onTouchDown(completion: @escaping ot_controlClosure) {
         touchHandler.onTouchDown = completion
-        return self
     }
     
-    func onTouchDownRepeat(completion: @escaping ot_controlClosure) -> UIControl {
+    func onTouchDownRepeat(completion: @escaping ot_controlClosure) {
         touchHandler.onTouchDownRepeat = completion
-        return self
     }
     
-    func onTouchDragInside(completion: @escaping ot_controlClosure) -> UIControl {
+    func onTouchDragInside(completion: @escaping ot_controlClosure) {
         touchHandler.onTouchDragInside = completion
-        return self
     }
     
-    func onTouchDragOutside(completion: @escaping ot_controlClosure) -> UIControl {
+    func onTouchDragOutside(completion: @escaping ot_controlClosure) {
         touchHandler.onTouchDragOutside = completion
-        return self
     }
     
-    func onTouchDragEnter(completion: @escaping ot_controlClosure) -> UIControl {
+    func onTouchDragEnter(completion: @escaping ot_controlClosure) {
         touchHandler.onTouchDragEnter = completion
-        return self
     }
     
-    func onTouchDragExit(completion: @escaping ot_controlClosure) -> UIControl {
+    func onTouchDragExit(completion: @escaping ot_controlClosure) {
         touchHandler.onTouchDragExit = completion
-        return self
     }
     
-    func onTouchUpInside(completion: @escaping ot_controlClosure) -> UIControl {
+    func onTouchUpInside(completion: @escaping ot_controlClosure) {
         touchHandler.onTouchUpInside = completion
-        return self
     }
     
-    func onTouchUpOutside(completion: @escaping ot_controlClosure) -> UIControl {
+    func onTouchUpOutside(completion: @escaping ot_controlClosure) {
         touchHandler.onTouchUpOutside = completion
-        return self
     }
     
-    func onTouchCancel(completion: @escaping ot_controlClosure) -> UIControl {
+    func onTouchCancel(completion: @escaping ot_controlClosure) {
         touchHandler.onTouchCancel = completion
-        return self
     }
     
-    func onValueChanged(completion: @escaping ot_controlClosure) -> UIControl {
+    func onValueChanged(completion: @escaping ot_controlClosure) {
         touchHandler.onValueChanged = completion
-        return self
     }
     
-    func onEditingDidBegin(completion: @escaping ot_controlClosure) -> UIControl {
+    func onEditingDidBegin(completion: @escaping ot_controlClosure) {
         touchHandler.onEditingDidBegin = completion
-        return self
     }
     
-    func onEditingChanged(completion: @escaping ot_controlClosure) -> UIControl {
+    func onEditingChanged(completion: @escaping ot_controlClosure) {
         touchHandler.onEditingChanged = completion
-        return self
     }
     
-    func onEditingDidEnd(completion: @escaping ot_controlClosure) -> UIControl {
+    func onEditingDidEnd(completion: @escaping ot_controlClosure) {
         touchHandler.onEditingDidEnd = completion
-        return self
     }
     
-    func onEditingDidEndOnExit(completion: @escaping ot_controlClosure) -> UIControl {
+    func onEditingDidEndOnExit(completion: @escaping ot_controlClosure) {
         touchHandler.onEditingDidEndOnExit = completion
-        return self
     }
     
-    func onAllTouchEvents(completion: @escaping ot_controlClosure) -> UIControl {
+    func onAllTouchEvents(completion: @escaping ot_controlClosure) {
         touchHandler.onAllTouchEvents = completion
-        return self
     }
     
-    func onAllEditingEvents(completion: @escaping ot_controlClosure) -> UIControl {
+    func onAllEditingEvents(completion: @escaping ot_controlClosure) {
         touchHandler.onAllEditingEvents = completion
-        return self
     }
     
-    func onApplicationReserved(completion: @escaping ot_controlClosure) -> UIControl {
+    func onApplicationReserved(completion: @escaping ot_controlClosure) {
         touchHandler.onApplicationReserved = completion
-        return self
     }
     
-    func onSystemReserved(completion: @escaping ot_controlClosure) -> UIControl {
+    func onSystemReserved(completion: @escaping ot_controlClosure) {
         touchHandler.onSystemReserved = completion
-        return self
     }
     
-    func onAllEvents(completion: @escaping ot_controlClosure) -> UIControl {
+    func onAllEvents(completion: @escaping ot_controlClosure) {
         touchHandler.onAllEvents = completion
-        return self
     }
-    
-    // MARK: Private
+}
+
+// MARK: Private
+
+public extension UIControl {
     
     private struct AssociatedKeys {
         static var touchHandlerKey = "ot_controlTouchHandlerKey"
     }
     
-    private var touchHandler: UIControlTouchHandler {
+    fileprivate var touchHandler: UIControlTouchHandler {
         get {
             if let handler = objc_getAssociatedObject(self,  &AssociatedKeys.touchHandlerKey) as? UIControlTouchHandler {
                 return handler

@@ -9,7 +9,6 @@
 import UIKit
 
 internal class UIViewTouchHandler: NSObject {
-    private var view: UIView
     
     var onTapRecognized: ot_viewClosure? {
         didSet {
@@ -48,12 +47,16 @@ internal class UIViewTouchHandler: NSObject {
     
     var onUpSwipeRecognized: ot_viewClosure? {
         didSet {
-            guard onDownSwipeRecognized != nil else { return }
+            guard onUpSwipeRecognized != nil else { return }
             let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(upSwipeRecognized(sender:)))
             swipeRecognizer.direction = .up
             view.addGestureRecognizer(swipeRecognizer)
         }
     }
+    
+    // MARK: Initialization
+    
+    fileprivate var view: UIView
     
     init(view: UIView) {
         self.view = view
@@ -69,26 +72,29 @@ internal class UIViewTouchHandler: NSObject {
             view.removeGestureRecognizer(recognizer)
         }
     }
+}
+
+// MARK: Private
+
+internal extension UIViewTouchHandler {
     
-    // MARK: Private
-    
-    @objc private func tapRecognized(sender: Any) {
+    @objc fileprivate func tapRecognized(sender: Any) {
         onTapRecognized?(view)
     }
     
-    @objc private func leftSwipeRecognized(sender: Any) {
+    @objc fileprivate func leftSwipeRecognized(sender: Any) {
         onLeftSwipeRecognized?(view)
     }
     
-    @objc private func rightSwipeRecognized(sender: Any) {
+    @objc fileprivate func rightSwipeRecognized(sender: Any) {
         onRightSwipeRecognized?(view)
     }
     
-    @objc private func upSwipeRecognized(sender: Any) {
+    @objc fileprivate func upSwipeRecognized(sender: Any) {
         onUpSwipeRecognized?(view)
     }
     
-    @objc private func downSwipeRecognized(sender: Any) {
+    @objc fileprivate func downSwipeRecognized(sender: Any) {
         onDownSwipeRecognized?(view)
     }
 }

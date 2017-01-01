@@ -10,8 +10,6 @@ import UIKit
 
 internal class UIControlTouchHandler: NSObject {
     
-    private var control: UIControl
-    
     var onTouchDown: ot_controlClosure? {
         didSet {
             if onTouchDown != nil {
@@ -19,6 +17,7 @@ internal class UIControlTouchHandler: NSObject {
             }
         }
     }
+    
     var onTouchDownRepeat: ot_controlClosure? {
         didSet {
             if onTouchDownRepeat != nil {
@@ -26,6 +25,7 @@ internal class UIControlTouchHandler: NSObject {
             }
         }
     }
+    
     var onTouchDragInside: ot_controlClosure? {
         didSet {
             if onTouchDragInside != nil {
@@ -33,6 +33,7 @@ internal class UIControlTouchHandler: NSObject {
             }
         }
     }
+    
     var onTouchDragOutside: ot_controlClosure? {
         didSet {
             if onTouchDragOutside != nil {
@@ -40,6 +41,7 @@ internal class UIControlTouchHandler: NSObject {
             }
         }
     }
+    
     var onTouchDragEnter: ot_controlClosure? {
         didSet {
             if onTouchDragEnter != nil {
@@ -47,6 +49,7 @@ internal class UIControlTouchHandler: NSObject {
             }
         }
     }
+    
     var onTouchDragExit: ot_controlClosure? {
         didSet {
             if onTouchDragExit != nil {
@@ -54,6 +57,7 @@ internal class UIControlTouchHandler: NSObject {
             }
         }
     }
+    
     var onTouchUpInside: ot_controlClosure? {
         didSet {
             if onTouchUpInside != nil {
@@ -61,6 +65,7 @@ internal class UIControlTouchHandler: NSObject {
             }
         }
     }
+    
     var onTouchUpOutside: ot_controlClosure? {
         didSet {
             if onTouchUpOutside != nil {
@@ -68,6 +73,7 @@ internal class UIControlTouchHandler: NSObject {
             }
         }
     }
+    
     var onTouchCancel: ot_controlClosure? {
         didSet {
             if onTouchCancel != nil {
@@ -75,6 +81,7 @@ internal class UIControlTouchHandler: NSObject {
             }
         }
     }
+    
     var onValueChanged: ot_controlClosure? {
         didSet {
             if onValueChanged != nil {
@@ -82,6 +89,7 @@ internal class UIControlTouchHandler: NSObject {
             }
         }
     }
+    
     var onEditingDidBegin: ot_controlClosure? {
         didSet {
             if onTouchDownRepeat != nil {
@@ -89,6 +97,7 @@ internal class UIControlTouchHandler: NSObject {
             }
         }
     }
+    
     var onEditingChanged: ot_controlClosure? {
         didSet {
             if onEditingChanged != nil {
@@ -96,6 +105,7 @@ internal class UIControlTouchHandler: NSObject {
             }
         }
     }
+    
     var onEditingDidEnd: ot_controlClosure? {
         didSet {
             if onEditingDidEnd != nil {
@@ -103,6 +113,7 @@ internal class UIControlTouchHandler: NSObject {
             }
         }
     }
+    
     var onEditingDidEndOnExit: ot_controlClosure? {
         didSet {
             if onEditingDidEndOnExit != nil {
@@ -110,6 +121,7 @@ internal class UIControlTouchHandler: NSObject {
             }
         }
     }
+    
     var onAllTouchEvents: ot_controlClosure? {
         didSet {
             if onAllTouchEvents != nil {
@@ -117,6 +129,7 @@ internal class UIControlTouchHandler: NSObject {
             }
         }
     }
+    
     var onAllEditingEvents: ot_controlClosure? {
         didSet {
             if onAllEditingEvents != nil {
@@ -124,6 +137,7 @@ internal class UIControlTouchHandler: NSObject {
             }
         }
     }
+    
     var onApplicationReserved: ot_controlClosure? {
         didSet {
             if onApplicationReserved != nil {
@@ -131,6 +145,7 @@ internal class UIControlTouchHandler: NSObject {
             }
         }
     }
+    
     var onSystemReserved: ot_controlClosure? {
         didSet {
             if onSystemReserved != nil {
@@ -138,6 +153,7 @@ internal class UIControlTouchHandler: NSObject {
             }
         }
     }
+    
     var onAllEvents: ot_controlClosure? {
         didSet {
             if onAllEvents != nil {
@@ -145,6 +161,10 @@ internal class UIControlTouchHandler: NSObject {
             }
         }
     }
+    
+    // MARK: Initialization
+
+    fileprivate var control: UIControl
     
     init(control: UIControl) {
         self.control = control
@@ -154,27 +174,29 @@ internal class UIControlTouchHandler: NSObject {
     deinit {
         control.removeTarget(self, action: nil, for: UIControlEvents.allEvents)
     }
-    
-    // MARK: Private
+}
 
-    @objc private func touchDown(sender: AnyObject) { onTouchDown?(control) }
-    @objc private func touchDownRepeat(sender: AnyObject) { onTouchDownRepeat?(control) }
-    @objc private func touchDragInside(sender: AnyObject) { onTouchDragInside?(control) }
-    @objc private func touchDragOutside(sender: AnyObject) { onTouchDragOutside?(control) }
-    @objc private func touchDragEnter(sender: AnyObject) { onTouchDragEnter?(control) }
-    @objc private func touchDragExit(sender: AnyObject) { onTouchDragExit?(control) }
-    @objc private func touchUpInside(sender: AnyObject) { onTouchUpInside?(control) }
-    @objc private func touchUpOutside(sender: AnyObject) { onTouchUpOutside?(control) }
-    @objc private func touchCancel(sender: AnyObject) { onTouchCancel?(control) }
-    @objc private func valueChanged(sender: AnyObject) { onValueChanged?(control) }
-    @objc private func editingDidBegin(sender: AnyObject) { onEditingDidBegin?(control) }
-    @objc private func editingChanged(sender: AnyObject) { onEditingChanged?(control) }
-    @objc private func editingDidEnd(sender: AnyObject) { onEditingDidEnd?(control) }
-    @objc private func editingDidEndOnExit(sender: AnyObject) { onEditingDidEndOnExit?(control) }
-    @objc private func allTouchEvents(sender: AnyObject) { onAllTouchEvents?(control) }
-    @objc private func allEditingEvents(sender: AnyObject) { onAllEditingEvents?(control) }
-    @objc private func applicationReserved(sender: AnyObject) { onApplicationReserved?(control) }
-    @objc private func systemReserved(sender: AnyObject) { onSystemReserved?(control) }
-    @objc private func allEvents(sender: AnyObject) { onAllEvents?(control) }
+// MARK: Private
+
+internal extension UIControlTouchHandler {
     
+    @objc fileprivate func touchDown(sender: AnyObject) { onTouchDown?(control) }
+    @objc fileprivate func touchDownRepeat(sender: AnyObject) { onTouchDownRepeat?(control) }
+    @objc fileprivate func touchDragInside(sender: AnyObject) { onTouchDragInside?(control) }
+    @objc fileprivate func touchDragOutside(sender: AnyObject) { onTouchDragOutside?(control) }
+    @objc fileprivate func touchDragEnter(sender: AnyObject) { onTouchDragEnter?(control) }
+    @objc fileprivate func touchDragExit(sender: AnyObject) { onTouchDragExit?(control) }
+    @objc fileprivate func touchUpInside(sender: AnyObject) { onTouchUpInside?(control) }
+    @objc fileprivate func touchUpOutside(sender: AnyObject) { onTouchUpOutside?(control) }
+    @objc fileprivate func touchCancel(sender: AnyObject) { onTouchCancel?(control) }
+    @objc fileprivate func valueChanged(sender: AnyObject) { onValueChanged?(control) }
+    @objc fileprivate func editingDidBegin(sender: AnyObject) { onEditingDidBegin?(control) }
+    @objc fileprivate func editingChanged(sender: AnyObject) { onEditingChanged?(control) }
+    @objc fileprivate func editingDidEnd(sender: AnyObject) { onEditingDidEnd?(control) }
+    @objc fileprivate func editingDidEndOnExit(sender: AnyObject) { onEditingDidEndOnExit?(control) }
+    @objc fileprivate func allTouchEvents(sender: AnyObject) { onAllTouchEvents?(control) }
+    @objc fileprivate func allEditingEvents(sender: AnyObject) { onAllEditingEvents?(control) }
+    @objc fileprivate func applicationReserved(sender: AnyObject) { onApplicationReserved?(control) }
+    @objc fileprivate func systemReserved(sender: AnyObject) { onSystemReserved?(control) }
+    @objc fileprivate func allEvents(sender: AnyObject) { onAllEvents?(control) }
 }

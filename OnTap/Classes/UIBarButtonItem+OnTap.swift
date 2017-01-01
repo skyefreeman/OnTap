@@ -8,42 +8,44 @@
 
 import UIKit
 
-// MARK: Convenience
+// MARK: OnTap
+
+public extension UIBarButtonItem {
+    
+    func onTap(completion: @escaping ot_barButtonItemClosure) {
+        touchHandler?.onTap = completion
+    }
+}
+
+// MARK: OnTap Convenience Initializers
 
 public extension UIBarButtonItem {
     
     convenience init(barButtonSystemItem: UIBarButtonSystemItem, onTap: @escaping ot_barButtonItemClosure) {
         self.init(barButtonSystemItem: barButtonSystemItem, target: nil, action: nil)
-        self.onTap { button in onTap(button) }
+        self.touchHandler = UIBarButtonItemTouchHandler(barButtonItem: self, onTap: onTap)
     }
     
     convenience init(image: UIImage?, style: UIBarButtonItemStyle, onTap: @escaping ot_barButtonItemClosure) {
         self.init(image: image, style: style, target: nil, action: nil)
-        self.onTap { button in onTap(button) }
+        self.touchHandler = UIBarButtonItemTouchHandler(barButtonItem: self, onTap: onTap)
     }
     
     convenience init(title: String?, style: UIBarButtonItemStyle, onTap: @escaping ot_barButtonItemClosure) {
         self.init(title: title, style: style, target: nil, action: nil)
-        self.onTap { button in onTap(button) }
+        self.touchHandler = UIBarButtonItemTouchHandler(barButtonItem: self, onTap: onTap)
     }
 }
 
-// MARK: OnTap
+// MARK: Private
 
 public extension UIBarButtonItem {
     
-    func onTap(completion: @escaping ot_barButtonItemClosure) -> UIBarButtonItem {
-        touchHandler?.onTap = completion
-        return self
-    }
-    
-    // MARK: Private
-
     private struct AssociatedKeys {
         static var touchHandlerKey = "ot_barButtonTouchHandlerKey"
     }
     
-    private var touchHandler: UIBarButtonItemTouchHandler? {
+    fileprivate var touchHandler: UIBarButtonItemTouchHandler? {
         get {
             if let handler = objc_getAssociatedObject(self,  &AssociatedKeys.touchHandlerKey) as? UIBarButtonItemTouchHandler? {
                 return handler

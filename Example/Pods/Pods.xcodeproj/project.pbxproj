@@ -114,6 +114,8 @@
 		EE839CD81E160BB200F63FA0 /* UIBarButtonItemTouchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE839CD71E160BB200F63FA0 /* UIBarButtonItemTouchHandler.swift */; };
 		EE839CDA1E160BBD00F63FA0 /* UIViewTouchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE839CD91E160BBD00F63FA0 /* UIViewTouchHandler.swift */; };
 		EE839CDC1E160BCC00F63FA0 /* UIControlTouchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE839CDB1E160BCC00F63FA0 /* UIControlTouchHandler.swift */; };
+		EE839CE21E188E1600F63FA0 /* UITextFieldTextHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE839CE11E188E1600F63FA0 /* UITextFieldTextHandler.swift */; };
+		EE839CE41E188F0100F63FA0 /* UITextViewTextHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE839CE31E188F0100F63FA0 /* UITextViewTextHandler.swift */; };
 		F10E73F08670796DD44569C3AE4421F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF21EF8268E32D359CD23F2CF3EFE3 /* Foundation.framework */; };
 		F441A5DD3BEC0D075B0FF6407F4EDF27 /* QuickSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C14CA30770ECA99AC2E8582C5D3C4DB /* QuickSpec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4A1B7A059AAA6727EB70E58E09332A4 /* CwlCatchException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6329DD1EE75A68AA931A2192C28C69 /* CwlCatchException.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -288,6 +290,8 @@
 		EE839CD71E160BB200F63FA0 /* UIBarButtonItemTouchHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemTouchHandler.swift; sourceTree = "<group>"; };
 		EE839CD91E160BBD00F63FA0 /* UIViewTouchHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewTouchHandler.swift; sourceTree = "<group>"; };
 		EE839CDB1E160BCC00F63FA0 /* UIControlTouchHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlTouchHandler.swift; sourceTree = "<group>"; };
+		EE839CE11E188E1600F63FA0 /* UITextFieldTextHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldTextHandler.swift; sourceTree = "<group>"; };
+		EE839CE31E188F0100F63FA0 /* UITextViewTextHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewTextHandler.swift; sourceTree = "<group>"; };
 		F26BA5A6FE4D418C4B347B819197FA63 /* NimbleEnvironment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleEnvironment.swift; path = Sources/Nimble/Adapters/NimbleEnvironment.swift; sourceTree = "<group>"; };
 		F2F54711B380CFE23B29ACEF631A3929 /* Stringers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stringers.swift; path = Sources/Nimble/Utils/Stringers.swift; sourceTree = "<group>"; };
 		F3DC9FAE16E2DD68869AF1B29FA0A42A /* AdapterProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdapterProtocols.swift; path = Sources/Nimble/Adapters/AdapterProtocols.swift; sourceTree = "<group>"; };
@@ -412,7 +416,7 @@
 				EE839CCC1E133F5E00F63FA0 /* UIControl+OnTap.swift */,
 				EE839CCD1E133F5E00F63FA0 /* UIView+OnTap.swift */,
 				EE839CDD1E160D1B00F63FA0 /* Shared */,
-				EE839CD51E16038400F63FA0 /* Touch Handlers */,
+				EE839CD51E16038400F63FA0 /* Handlers */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -616,14 +620,16 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		EE839CD51E16038400F63FA0 /* Touch Handlers */ = {
+		EE839CD51E16038400F63FA0 /* Handlers */ = {
 			isa = PBXGroup;
 			children = (
 				EE839CDB1E160BCC00F63FA0 /* UIControlTouchHandler.swift */,
 				EE839CD91E160BBD00F63FA0 /* UIViewTouchHandler.swift */,
 				EE839CD71E160BB200F63FA0 /* UIBarButtonItemTouchHandler.swift */,
+				EE839CE11E188E1600F63FA0 /* UITextFieldTextHandler.swift */,
+				EE839CE31E188F0100F63FA0 /* UITextViewTextHandler.swift */,
 			);
-			name = "Touch Handlers";
+			name = Handlers;
 			sourceTree = "<group>";
 		};
 		EE839CDD1E160D1B00F63FA0 /* Shared */ = {
@@ -941,8 +947,10 @@
 				D2E6C600F1EBBBEC27EC997197D0DFBF /* OnTap-dummy.m in Sources */,
 				EE839CD41E133FBC00F63FA0 /* SharedClosures.swift in Sources */,
 				EE839CCE1E133F5E00F63FA0 /* UIBarButtonItem+OnTap.swift in Sources */,
+				EE839CE21E188E1600F63FA0 /* UITextFieldTextHandler.swift in Sources */,
 				EE839CDC1E160BCC00F63FA0 /* UIControlTouchHandler.swift in Sources */,
 				EE839CCF1E133F5E00F63FA0 /* UIControl+OnTap.swift in Sources */,
+				EE839CE41E188F0100F63FA0 /* UITextViewTextHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

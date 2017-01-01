@@ -9,73 +9,100 @@
 import UIKit
 import OnTap
 
+extension UIView {
+    var x: CGFloat { return frame.origin.x }
+    var y: CGFloat { return frame.origin.y }
+    
+    var width: CGFloat { return frame.size.width }
+    var height: CGFloat { return frame.size.height }
+
+    var bottom: CGFloat { return frame.origin.y + frame.size.height }
+    var right: CGFloat { return frame.origin.x + frame.size.width }
+    
+    func addSubviews(_ subviews: UIView...) {
+        subviews.forEach { subview in addSubview(subview) }
+    }
+}
+
 class ViewController: UIViewController {
     
-    // TODO: make these return the correctly
-
-    let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
-        .onTouchDown { button in
-            print("\(button): Touch down!")
+    lazy var button: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor.blue
+        button.setTitle(NSLocalizedString("UIButton", comment: ""), for: .normal)
+        button.onTouchDown { (button) in
+            print("UIButton Touch down!")
         }
-        .onTouchUpInside { button in
-            print("\(button): Touch up inside!")
+        button.onTouchUpInside { (button) in
+            print("UIButton Touch up inside!")
         }
-        .onTouchUpOutside { button in
-            print("\(button): Touch up outside!")
-    }
-    
-    let barButtonItem = UIBarButtonItem(title: NSLocalizedString("Tap Me!", comment: ""), style: .plain, onTap: {
-        barButtonItem in
-        print("barButtonItem tapped!")
-    })
-    
-    let slider = UISlider()
-        .onValueChanged { slider in
-            if let slider = slider as? UISlider {
-                print("new value: \(slider.value)")
-            }
-    }
-    
-    let switchView = UISwitch()
-        .onValueChanged { switchView in
-            if let switchView = switchView as? UISwitch {
-                print("new value: \(switchView.isOn)")
-            }
-    }
-    
-    let plainView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        .onTapRecognized { view in
-            print("view tapped!")
+        button.onTouchUpOutside { (button) in
+            print("UIButton Touch up outside!")
         }
-        .onLeftSwipeRecognized { view in
-            print("view swiped left!")
-        }
-        .onRightSwipeRecognized { view in
-            print("view swiped right!")
-        }
-        .onUpSwipeRecognized { view in
-            print("view swiped up!")
-        }
-        .onDownSwipeRecognized { view in
-            print("view swiped down!")
-    }
-    
-    lazy var stackView: UIStackView = { [unowned self] in
-        let stackView = UIStackView(arrangedSubviews: [self.button, self.slider, self.switchView, self.plainView])
-        return stackView
+        return button
     }()
 
+    lazy var slider: UISlider = {
+        let slider = UISlider()
+        slider.onValueChanged { (slider) in
+            if let slider = slider as? UISlider {
+                print("slider new value: \(slider.value)")
+            }
+        }
+        return slider
+    }()
+    lazy var switchView: UISwitch = {
+        let switchView = UISwitch()
+        switchView.onValueChanged { (switchView) in
+            if let switchView = switchView as? UISwitch {
+                print("slider new value: \(switchView.isOn)")
+            }
+        }
+        return switchView
+    }()
+    
+    lazy var label: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = UIColor.red
+        label.text = NSLocalizedString("UIView", comment: "")
+        label.textAlignment = .center
+        label.onTapRecognized { (view) in
+            print("view view tapped!")
+        }
+        label.onLeftSwipeRecognized { (view) in
+            print("view swiped left!")
+        }
+        label.onRightSwipeRecognized { (view) in
+            print("view swiped right!")
+        }
+        label.onUpSwipeRecognized { (view) in
+            print("view swiped up!")
+        }
+        label.onDownSwipeRecognized { (view) in
+            print("view swiped down!")
+        }
+        return label
+    }()
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        stackView.frame = view.frame
+
+        let sharedSize = CGSize(width: view.width/2, height: view.height/2)
+        button.frame = CGRect(x: 0, y: 0, width: sharedSize.width, height: sharedSize.height)
+        slider.frame = CGRect(x: view.width/2, y: 0, width: sharedSize.width, height: sharedSize.height)
+        switchView.center = CGPoint(x: sharedSize.width/2, y: button.bottom + sharedSize.height/2)
+        label.frame = CGRect(x: view.width/2, y: slider.bottom, width: sharedSize.width, height: sharedSize.height)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        plainView.backgroundColor = UIColor.red
-        button.backgroundColor = UIColor.blue
-
-        view.addSubview(stackView)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("UINavigationItem", comment: ""), style: .plain) {
+            barButtonItem in
+            print("barButtonItem tapped!")
+        }
+        view.addSubviews(button, slider, switchView, label)
+        edgesForExtendedLayout = []
     }
 }

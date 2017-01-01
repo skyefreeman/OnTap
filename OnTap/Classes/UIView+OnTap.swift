@@ -8,45 +8,45 @@
 
 import UIKit
 
+// MARK: OnTap
+
 public extension UIView {
     
-    func onTapRecognized(completion: @escaping ot_viewClosure) -> UIView {
+    func onTapRecognized(completion: @escaping ot_viewClosure) {
         isUserInteractionEnabled = true
         touchHandler.onTapRecognized = completion
-        return self
     }
     
-    func onLeftSwipeRecognized(completion: @escaping ot_viewClosure) -> UIView {
+    func onLeftSwipeRecognized(completion: @escaping ot_viewClosure) {
         isUserInteractionEnabled = true
         touchHandler.onLeftSwipeRecognized = completion
-        return self
     }
     
-    func onRightSwipeRecognized(completion: @escaping ot_viewClosure) -> UIView {
+    func onRightSwipeRecognized(completion: @escaping ot_viewClosure) {
         isUserInteractionEnabled = true
         touchHandler.onRightSwipeRecognized = completion
-        return self
     }
     
-    func onUpSwipeRecognized(completion: @escaping ot_viewClosure) -> UIView {
+    func onUpSwipeRecognized(completion: @escaping ot_viewClosure) {
         isUserInteractionEnabled = true
         touchHandler.onUpSwipeRecognized = completion
-        return self
     }
     
-    func onDownSwipeRecognized(completion: @escaping ot_viewClosure) -> UIView {
+    func onDownSwipeRecognized(completion: @escaping ot_viewClosure) {
         isUserInteractionEnabled = true
         touchHandler.onDownSwipeRecognized = completion
-        return self
     }
-    
-    // MARK: Private
+}
 
+// MARK: Private
+
+public extension UIView {
+    
     private struct AssociatedKeys {
         static var touchHandlerKey = "ot_viewTouchHandlerKey"
     }
     
-    private var touchHandler: UIViewTouchHandler {
+    fileprivate var touchHandler: UIViewTouchHandler {
         get {
             if let handler = objc_getAssociatedObject(self,  &AssociatedKeys.touchHandlerKey) as? UIViewTouchHandler {
                 return handler
