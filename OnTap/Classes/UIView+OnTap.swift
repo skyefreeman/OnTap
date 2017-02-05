@@ -1,40 +1,43 @@
 //
 //  UIView+OnTap.swift
-//  Bloglovin
+//  OnTap
 //
-//  Created by Skye Freeman on 12/1/16.
-//  Copyright © 2016 Bloglovin. All rights reserved.
+//  Created by Skye Freeman on 1/27/17.
+//  Copyright © 2017 Skye Freeman. All rights reserved.
 //
 
 import UIKit
 
-// MARK: OnTap
-
 public extension UIView {
     
-    func onTapRecognized(completion: @escaping ot_viewClosure) {
+    @discardableResult func onTapRecognized(completion: @escaping ot_standardClosure) -> Self {
         isUserInteractionEnabled = true
         touchHandler.onTapRecognized = completion
+        return self
     }
     
-    func onLeftSwipeRecognized(completion: @escaping ot_viewClosure) {
+    @discardableResult func onLeftSwipeRecognized(completion: @escaping ot_standardClosure) -> Self {
         isUserInteractionEnabled = true
         touchHandler.onLeftSwipeRecognized = completion
+        return self
     }
     
-    func onRightSwipeRecognized(completion: @escaping ot_viewClosure) {
+    @discardableResult func onRightSwipeRecognized(completion: @escaping ot_standardClosure) -> Self {
         isUserInteractionEnabled = true
         touchHandler.onRightSwipeRecognized = completion
+        return self
     }
     
-    func onUpSwipeRecognized(completion: @escaping ot_viewClosure) {
+    @discardableResult func onUpSwipeRecognized(completion: @escaping ot_standardClosure) -> Self {
         isUserInteractionEnabled = true
         touchHandler.onUpSwipeRecognized = completion
+        return self
     }
     
-    func onDownSwipeRecognized(completion: @escaping ot_viewClosure) {
+    @discardableResult func onDownSwipeRecognized(completion: @escaping ot_standardClosure) -> Self {
         isUserInteractionEnabled = true
         touchHandler.onDownSwipeRecognized = completion
+        return self
     }
 }
 

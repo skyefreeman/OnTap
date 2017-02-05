@@ -1,22 +1,20 @@
 //
 //  UIBarButtonItemTouchHandler.swift
-//  Pods
+//  OnTap
 //
-//  Created by Skye on 12/29/16.
-//
+//  Created by Skye Freeman on 1/27/17.
+//  Copyright © 2017 Skye Freeman. All rights reserved.
 //
 
 import UIKit
 
 internal class UIBarButtonItemTouchHandler: NSObject {
     
-    var onTap: ot_barButtonItemClosure?
-    
-    // MARK: Initialization
+    var onTap: ot_standardClosure?
     
     fileprivate var barButtonItem: UIBarButtonItem
-    
-    init(barButtonItem: UIBarButtonItem, onTap: ot_barButtonItemClosure?) {
+
+    init(barButtonItem: UIBarButtonItem, onTap: ot_standardClosure?) {
         self.barButtonItem = barButtonItem
         self.onTap = onTap
         super.init()
@@ -24,18 +22,10 @@ internal class UIBarButtonItemTouchHandler: NSObject {
         self.barButtonItem.target = self
         self.barButtonItem.action = #selector(barButtonItemTouched(sender:))
     }
-    
-    deinit {
-        barButtonItem.target = nil
-        barButtonItem.action = nil
-    }
 }
 
 // MARK: Private
 
 internal extension UIBarButtonItemTouchHandler {
-    
-    @objc fileprivate func barButtonItemTouched(sender: Any) {
-        onTap?(barButtonItem)
-    }
+    @objc fileprivate func barButtonItemTouched(sender: Any) { onTap?() }
 }

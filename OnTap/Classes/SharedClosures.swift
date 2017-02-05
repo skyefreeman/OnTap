@@ -1,12 +1,9 @@
 //
 //  SharedClosures.swift
-//  Pods
+//  OnTap
 //
-//  Created by Skye on 12/27/16.
-//
+//  Created by Skye Freeman on 1/27/17.
+//  Copyright © 2017 Skye Freeman. All rights reserved.
 //
 
 public typealias ot_standardClosure = (Void) -> Void
-public typealias ot_viewClosure = (UIView) -> Void
-public typealias ot_controlClosure = (UIControl) -> Void
-public typealias ot_barButtonItemClosure = (UIBarButtonItem) -> Void

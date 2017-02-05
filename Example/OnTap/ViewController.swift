@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  OnTap
 //
-//  Created by Skye Freeman on 12/27/2016.
-//  Copyright (c) 2016 Skye Freeman. All rights reserved.
+//  Created by Skye Freeman on 1/27/17.
+//  Copyright © 2017 Skye Freeman. All rights reserved.
 //
 
 import UIKit
@@ -30,58 +30,46 @@ class ViewController: UIViewController {
         let button = UIButton()
         button.backgroundColor = UIColor.blue
         button.setTitle(NSLocalizedString("UIButton", comment: ""), for: .normal)
-        button.onTouchDown { (button) in
-            print("UIButton Touch down!")
-        }
-        button.onTouchUpInside { (button) in
-            print("UIButton Touch up inside!")
-        }
-        button.onTouchUpOutside { (button) in
-            print("UIButton Touch up outside!")
-        }
         return button
+            .onTouchDown { print("UIButton touch down!") }
+            .onTouchUpInside { print("UIButton touch up inside") }
+            .onTouchUpOutside { print("UIButton touch up outside") }
     }()
 
     lazy var slider: UISlider = {
-        let slider = UISlider()
-        slider.onValueChanged { (slider) in
-            if let slider = slider as? UISlider {
-                print("slider new value: \(slider.value)")
-            }
-        }
-        return slider
+        return UISlider()
+            .onValueChanged { [unowned self] in print("slider new value: \(self.slider.value)") }
     }()
+
     lazy var switchView: UISwitch = {
-        let switchView = UISwitch()
-        switchView.onValueChanged { (switchView) in
-            if let switchView = switchView as? UISwitch {
-                print("slider new value: \(switchView.isOn)")
-            }
-        }
-        return switchView
+        return UISwitch()
+            .onValueChanged { [unowned self] in print("slider new value: \(self.switchView.isOn)") }
     }()
     
     lazy var label: UILabel = {
         let label = UILabel()
         label.backgroundColor = UIColor.red
         label.text = NSLocalizedString("UIView", comment: "")
+        label.textColor = UIColor.white
         label.textAlignment = .center
-        label.onTapRecognized { (view) in
-            print("view view tapped!")
-        }
-        label.onLeftSwipeRecognized { (view) in
-            print("view swiped left!")
-        }
-        label.onRightSwipeRecognized { (view) in
-            print("view swiped right!")
-        }
-        label.onUpSwipeRecognized { (view) in
-            print("view swiped up!")
-        }
-        label.onDownSwipeRecognized { (view) in
-            print("view swiped down!")
-        }
         return label
+            .onTapRecognized { print("view tapped!") }
+            .onLeftSwipeRecognized { print("view swiped left!") }
+            .onRightSwipeRecognized { print("view swiped right!") }
+            .onUpSwipeRecognized { print("view swiped up!") }
+            .onDownSwipeRecognized { print("view swiped down!") }
+    }()
+    
+    lazy var leftBarButtonItem: UIBarButtonItem = {
+        return UIBarButtonItem(title: NSLocalizedString("Left", comment: ""), style: .plain) {
+            print("left barButtonItem tapped!")
+        }
+    }()
+
+    lazy var rightBarButtonItem: UIBarButtonItem = {
+        return UIBarButtonItem(title: NSLocalizedString("Right", comment: ""), style: .plain) {
+            print("right barButtonItem tapped!")
+        }
     }()
     
     override func viewDidLayoutSubviews() {
@@ -97,11 +85,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: nil)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("UINavigationItem", comment: ""), style: .plain) {
-            barButtonItem in
-            print("barButtonItem tapped!")
-        }
+        navigationItem.leftBarButtonItem = leftBarButtonItem
+        navigationItem.rightBarButtonItem = rightBarButtonItem
+        
         view.addSubviews(button, slider, switchView, label)
         edgesForExtendedLayout = []
     }

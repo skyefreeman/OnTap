@@ -1,91 +1,108 @@
 //
 //  UIControl+OnTap.swift
-//  Bloglovin
+//  OnTap
 //
-//  Created by Skye Freeman on 9/8/16.
-//  Copyright © 2016 Bloglovin. All rights reserved.
+//  Created by Skye Freeman on 1/27/17.
+//  Copyright © 2017 Skye Freeman. All rights reserved.
 //
 
 import UIKit
 
-// MARK: OnTap
-
 public extension UIControl {
     
-    func onTouchDown(completion: @escaping ot_controlClosure) {
+    @discardableResult func onTouchDown(completion: @escaping ot_standardClosure) -> Self {
         touchHandler.onTouchDown = completion
+        return self
     }
     
-    func onTouchDownRepeat(completion: @escaping ot_controlClosure) {
+    @discardableResult func onTouchDownRepeat(completion: @escaping ot_standardClosure) -> Self {
         touchHandler.onTouchDownRepeat = completion
+        return self
     }
     
-    func onTouchDragInside(completion: @escaping ot_controlClosure) {
+    @discardableResult func onTouchDragInside(completion: @escaping ot_standardClosure) -> Self {
         touchHandler.onTouchDragInside = completion
+        return self
     }
     
-    func onTouchDragOutside(completion: @escaping ot_controlClosure) {
+    @discardableResult func onTouchDragOutside(completion: @escaping ot_standardClosure) -> Self {
         touchHandler.onTouchDragOutside = completion
+        return self
     }
     
-    func onTouchDragEnter(completion: @escaping ot_controlClosure) {
+    @discardableResult func onTouchDragEnter(completion: @escaping ot_standardClosure) -> Self {
         touchHandler.onTouchDragEnter = completion
+        return self
     }
     
-    func onTouchDragExit(completion: @escaping ot_controlClosure) {
+    @discardableResult func onTouchDragExit(completion: @escaping ot_standardClosure) -> Self {
         touchHandler.onTouchDragExit = completion
+        return self
     }
     
-    func onTouchUpInside(completion: @escaping ot_controlClosure) {
+    @discardableResult func onTouchUpInside(completion: @escaping ot_standardClosure) -> Self {
         touchHandler.onTouchUpInside = completion
+        return self
     }
     
-    func onTouchUpOutside(completion: @escaping ot_controlClosure) {
+    @discardableResult func onTouchUpOutside(completion: @escaping ot_standardClosure) -> Self {
         touchHandler.onTouchUpOutside = completion
+        return self
     }
     
-    func onTouchCancel(completion: @escaping ot_controlClosure) {
+    @discardableResult func onTouchCancel(completion: @escaping ot_standardClosure) -> Self {
         touchHandler.onTouchCancel = completion
+        return self
     }
     
-    func onValueChanged(completion: @escaping ot_controlClosure) {
+    @discardableResult func onValueChanged(completion: @escaping ot_standardClosure) -> Self {
         touchHandler.onValueChanged = completion
+        return self
     }
     
-    func onEditingDidBegin(completion: @escaping ot_controlClosure) {
+    @discardableResult func onEditingDidBegin(completion: @escaping ot_standardClosure) -> Self {
         touchHandler.onEditingDidBegin = completion
+        return self
     }
     
-    func onEditingChanged(completion: @escaping ot_controlClosure) {
+    @discardableResult func onEditingChanged(completion: @escaping ot_standardClosure) -> Self {
         touchHandler.onEditingChanged = completion
+        return self
     }
     
-    func onEditingDidEnd(completion: @escaping ot_controlClosure) {
+    @discardableResult func onEditingDidEnd(completion: @escaping ot_standardClosure) -> Self {
         touchHandler.onEditingDidEnd = completion
+        return self
     }
     
-    func onEditingDidEndOnExit(completion: @escaping ot_controlClosure) {
+    @discardableResult func onEditingDidEndOnExit(completion: @escaping ot_standardClosure) -> Self {
         touchHandler.onEditingDidEndOnExit = completion
+        return self
     }
     
-    func onAllTouchEvents(completion: @escaping ot_controlClosure) {
+    @discardableResult func onAllTouchEvents(completion: @escaping ot_standardClosure) -> Self {
         touchHandler.onAllTouchEvents = completion
+        return self
     }
     
-    func onAllEditingEvents(completion: @escaping ot_controlClosure) {
+    @discardableResult func onAllEditingEvents(completion: @escaping ot_standardClosure) -> Self {
         touchHandler.onAllEditingEvents = completion
+        return self
     }
     
-    func onApplicationReserved(completion: @escaping ot_controlClosure) {
+    @discardableResult func onApplicationReserved(completion: @escaping ot_standardClosure) -> Self {
         touchHandler.onApplicationReserved = completion
+        return self
     }
     
-    func onSystemReserved(completion: @escaping ot_controlClosure) {
+    @discardableResult func onSystemReserved(completion: @escaping ot_standardClosure) -> Self {
         touchHandler.onSystemReserved = completion
+        return self
     }
     
-    func onAllEvents(completion: @escaping ot_controlClosure) {
+    @discardableResult func onAllEvents(completion: @escaping ot_standardClosure) -> Self {
         touchHandler.onAllEvents = completion
+        return self
     }
 }
 

@@ -1,37 +1,36 @@
 //
 //  UIBarButtonItem+OnTap.swift
-//  Bloglovin
+//  OnTap
 //
-//  Created by Skye Freeman on 9/27/16.
-//  Copyright © 2016 Bloglovin. All rights reserved.
+//  Created by Skye Freeman on 1/27/17.
+//  Copyright © 2017 Skye Freeman. All rights reserved.
 //
 
 import UIKit
 
-// MARK: OnTap
-
 public extension UIBarButtonItem {
     
-    func onTap(completion: @escaping ot_barButtonItemClosure) {
+    @discardableResult func onTap(completion: @escaping ot_standardClosure) -> Self {
         touchHandler?.onTap = completion
+        return self
     }
 }
 
-// MARK: OnTap Convenience Initializers
+// MARK: Convenience Initializers
 
 public extension UIBarButtonItem {
     
-    convenience init(barButtonSystemItem: UIBarButtonSystemItem, onTap: @escaping ot_barButtonItemClosure) {
+    convenience init(barButtonSystemItem: UIBarButtonSystemItem, onTap: @escaping ot_standardClosure) {
         self.init(barButtonSystemItem: barButtonSystemItem, target: nil, action: nil)
         self.touchHandler = UIBarButtonItemTouchHandler(barButtonItem: self, onTap: onTap)
     }
     
-    convenience init(image: UIImage?, style: UIBarButtonItemStyle, onTap: @escaping ot_barButtonItemClosure) {
+    convenience init(image: UIImage?, style: UIBarButtonItemStyle, onTap: @escaping ot_standardClosure) {
         self.init(image: image, style: style, target: nil, action: nil)
         self.touchHandler = UIBarButtonItemTouchHandler(barButtonItem: self, onTap: onTap)
     }
     
-    convenience init(title: String?, style: UIBarButtonItemStyle, onTap: @escaping ot_barButtonItemClosure) {
+    convenience init(title: String?, style: UIBarButtonItemStyle, onTap: @escaping ot_standardClosure) {
         self.init(title: title, style: style, target: nil, action: nil)
         self.touchHandler = UIBarButtonItemTouchHandler(barButtonItem: self, onTap: onTap)
     }
