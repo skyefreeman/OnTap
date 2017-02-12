@@ -32,34 +32,36 @@ class ViewController: UIViewController {
         button.setTitle(NSLocalizedString("UIButton", comment: ""), for: .normal)
         return button
             .on(.touchDown) { print("touch down happend!!!") }
+            .on(.touchDownRepeat) { print("touch down repeated!!!") }
             .on(.touchUpInside) { print("touch up inside happend!!!") }
             .on(.touchUpOutside) { print("touch up outside happend!!!") }
-//            .onTouchUpInside { print("UIButton touch up inside") }
-//            .onTouchUpOutside { print("UIButton touch up outside") }
     }()
 
     lazy var slider: UISlider = {
-        return UISlider()
-            .on(.valueChanged) { [unowned self] in print("slider new value: \(self.slider.value)") }
+        return UISlider().on(.valueChanged) { [unowned self] in
+            print("slider new value: \(self.slider.value)")
+        }
     }()
 
     lazy var switchView: UISwitch = {
-        return UISwitch()
-            .on(.valueChanged) { [unowned self] in print("switch new value: \(self.switchView.isOn)") }
+        return UISwitch().on(.valueChanged) { [unowned self] in
+            print("switch new value: \(self.switchView.isOn)")
+        }
+        
     }()
     
     lazy var label: UILabel = {
         let label = UILabel()
         label.backgroundColor = UIColor.red
-        label.text = NSLocalizedString("UIView", comment: "")
+        label.text = NSLocalizedString("Tap me!", comment: "")
         label.textColor = UIColor.white
         label.textAlignment = .center
         return label
-            .onTapRecognized { print("view tapped!") }
-            .onLeftSwipeRecognized { print("view swiped left!") }
-            .onRightSwipeRecognized { print("view swiped right!") }
-            .onUpSwipeRecognized { print("view swiped up!") }
-            .onDownSwipeRecognized { print("view swiped down!") }
+            .on(.tap, touches: 1) { label.text = "tapped" }
+            .on(.leftSwipe, touches: 1) { label.text = "left" }
+            .on(.rightSwipe, touches: 1) { label.text = "right" }
+            .on(.upSwipe, touches: 1) { label.text = "up" }
+            .on(.downSwipe, touches: 1) { label.text = "down" }
     }()
     
     lazy var leftBarButtonItem: UIBarButtonItem = {

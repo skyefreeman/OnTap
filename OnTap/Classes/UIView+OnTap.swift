@@ -10,52 +10,27 @@ import UIKit
 
 public extension UIView {
     
-    @discardableResult func onTapRecognized(completion: @escaping ot_standardClosure) -> Self {
+    @discardableResult func on(_ event: OTViewEvent, touches: Int, completion: @escaping OTStandardClosure) -> Self {
+        var wrapper = WrappedEvent(event: event, touches: touches)
+        touchHandler.recognizers[wrapper] = completion
         isUserInteractionEnabled = true
-        touchHandler.onTapRecognized = completion
         return self
     }
     
-    @discardableResult func onLeftSwipeRecognized(completion: @escaping ot_standardClosure) -> Self {
-        isUserInteractionEnabled = true
-        touchHandler.onLeftSwipeRecognized = completion
-        return self
-    }
-    
-    @discardableResult func onRightSwipeRecognized(completion: @escaping ot_standardClosure) -> Self {
-        isUserInteractionEnabled = true
-        touchHandler.onRightSwipeRecognized = completion
-        return self
-    }
-    
-    @discardableResult func onUpSwipeRecognized(completion: @escaping ot_standardClosure) -> Self {
-        isUserInteractionEnabled = true
-        touchHandler.onUpSwipeRecognized = completion
-        return self
-    }
-    
-    @discardableResult func onDownSwipeRecognized(completion: @escaping ot_standardClosure) -> Self {
-        isUserInteractionEnabled = true
-        touchHandler.onDownSwipeRecognized = completion
-        return self
-    }
-}
+    // MARK: Private
 
-// MARK: Private
-
-public extension UIView {
-    
     private struct AssociatedKeys {
-        static var touchHandlerKey = "ot_viewTouchHandlerKey"
+        static var touchHandlerKey = "OTViewTouchHandlerKey"
     }
     
-    fileprivate var touchHandler: UIViewTouchHandler {
+    private var touchHandler: UIViewTouchHandler {
         get {
             if let handler = objc_getAssociatedObject(self,  &AssociatedKeys.touchHandlerKey) as? UIViewTouchHandler {
                 return handler
-            } else {
-                self.touchHandler = UIViewTouchHandler(view: self)
-                return self.touchHandler
+            }
+            else {
+                touchHandler = UIViewTouchHandler(view: self)
+                return touchHandler
             }
         }
         set {

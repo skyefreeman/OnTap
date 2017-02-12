@@ -16,95 +16,73 @@ extension UIControlEvents: Hashable {
 
 internal class UIControlTouchHandler: NSObject {
     
-    var onTouchDown: ot_standardClosure? {
+    var onTouchDown: OTStandardClosure? {
         didSet {
-            if onTouchDown != nil {
-                control.addTarget(self, action: #selector(touchDown), for: .touchDown)
-            }
+            control.addTarget(self, action: #selector(touchDown), for: .touchDown)
         }
     }
     
-    var onTouchDownRepeat: ot_standardClosure? {
+    var onTouchDownRepeat: OTStandardClosure? {
         didSet {
-            if onTouchDownRepeat != nil {
-                control.addTarget(self, action: #selector(touchDownRepeat), for: .touchDownRepeat)
-            }
+            control.addTarget(self, action: #selector(touchDownRepeat), for: .touchDownRepeat)
         }
     }
     
-    var onTouchDragInside: ot_standardClosure? {
+    var onTouchDragInside: OTStandardClosure? {
         didSet {
-            if onTouchDragInside != nil {
-                control.addTarget(self, action: #selector(touchDragInside), for: .touchDragInside)
-            }
+            control.addTarget(self, action: #selector(touchDragInside), for: .touchDragInside)
         }
     }
     
-    var onTouchDragOutside: ot_standardClosure? {
+    var onTouchDragOutside: OTStandardClosure? {
         didSet {
-            if onTouchDragOutside != nil {
-                control.addTarget(self, action: #selector(touchDragOutside), for: .touchDragOutside)
-            }
+            control.addTarget(self, action: #selector(touchDragOutside), for: .touchDragOutside)
         }
     }
     
-    var onTouchDragEnter: ot_standardClosure? {
+    var onTouchDragEnter: OTStandardClosure? {
         didSet {
-            if onTouchDragEnter != nil {
-                control.addTarget(self, action: #selector(touchDragEnter), for: .touchDragEnter)
-            }
+            control.addTarget(self, action: #selector(touchDragEnter), for: .touchDragEnter)
         }
     }
     
-    var onTouchDragExit: ot_standardClosure? {
+    var onTouchDragExit: OTStandardClosure? {
         didSet {
-            if onTouchDragExit != nil {
-                control.addTarget(self, action: #selector(touchDragExit), for: .touchDragExit)
-            }
+            control.addTarget(self, action: #selector(touchDragExit), for: .touchDragExit)
         }
     }
     
-    var onTouchUpInside: ot_standardClosure? {
+    var onTouchUpInside: OTStandardClosure? {
         didSet {
-            if onTouchUpInside != nil {
-                control.addTarget(self, action: #selector(touchUpInside), for: .touchUpInside)
-            }
+            control.addTarget(self, action: #selector(touchUpInside), for: .touchUpInside)
         }
     }
     
-    var onTouchUpOutside: ot_standardClosure? {
+    var onTouchUpOutside: OTStandardClosure? {
         didSet {
-            if onTouchUpOutside != nil {
-                control.addTarget(self, action: #selector(touchUpOutside), for: .touchUpOutside)
-            }
+            control.addTarget(self, action: #selector(touchUpOutside), for: .touchUpOutside)
         }
     }
     
-    var onTouchCancel: ot_standardClosure? {
+    var onTouchCancel: OTStandardClosure? {
         didSet {
-            if onTouchCancel != nil {
-                control.addTarget(self, action: #selector(touchCancel), for: .touchCancel)
-            }
+            control.addTarget(self, action: #selector(touchCancel), for: .touchCancel)
         }
     }
     
-    var onValueChanged: ot_standardClosure? {
+    var onValueChanged: OTStandardClosure? {
         didSet {
-            if onValueChanged != nil {
-                control.addTarget(self, action: #selector(valueChanged), for: .valueChanged)
-            }
+            control.addTarget(self, action: #selector(valueChanged), for: .valueChanged)
+        }
+    }
+
+    var onEditingDidBegin: OTStandardClosure? {
+        didSet {
+            control.addTarget(self, action: #selector(editingDidBegin), for: .editingDidBegin)
         }
     }
     
-    var onEditingDidBegin: ot_standardClosure? {
-        didSet {
-            if onEditingDidBegin != nil {
-                control.addTarget(self, action: #selector(editingDidBegin), for: .editingDidBegin)
-            }
-        }
-    }
-    
-    var onEditingChanged: ot_standardClosure? {
+    var onEditingChanged: OTStandardClosure? {
         didSet {
             if onEditingChanged != nil {
                 control.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
@@ -112,68 +90,53 @@ internal class UIControlTouchHandler: NSObject {
         }
     }
     
-    var onEditingDidEnd: ot_standardClosure? {
+    var onEditingDidEnd: OTStandardClosure? {
         didSet {
-            if onEditingDidEnd != nil {
-                control.addTarget(self, action: #selector(editingDidEnd), for: .editingDidEnd)
-            }
+            control.addTarget(self, action: #selector(editingDidEnd), for: .editingDidEnd)
         }
     }
     
-    var onEditingDidEndOnExit: ot_standardClosure? {
+    var onEditingDidEndOnExit: OTStandardClosure? {
         didSet {
-            if onEditingDidEndOnExit != nil {
-                control.addTarget(self, action: #selector(editingDidEndOnExit), for: .editingDidEndOnExit)
-            }
+            control.addTarget(self, action: #selector(editingDidEndOnExit), for: .editingDidEndOnExit)
         }
     }
     
-    var onAllTouchEvents: ot_standardClosure? {
+    var onAllTouchEvents: OTStandardClosure? {
         didSet {
-            if onAllTouchEvents != nil {
-                control.addTarget(self, action: #selector(allTouchEvents), for: .allTouchEvents)
-            }
+            control.addTarget(self, action: #selector(allTouchEvents), for: .allTouchEvents)
         }
     }
     
-    var onAllEditingEvents: ot_standardClosure? {
+    var onAllEditingEvents: OTStandardClosure? {
         didSet {
-            if onAllEditingEvents != nil {
-                control.addTarget(self, action: #selector(allEditingEvents), for: .allEditingEvents)
-            }
+            control.addTarget(self, action: #selector(allEditingEvents), for: .allEditingEvents)
         }
     }
     
-    var onApplicationReserved: ot_standardClosure? {
+    var onApplicationReserved: OTStandardClosure? {
         didSet {
-            if onApplicationReserved != nil {
-                control.addTarget(self, action: #selector(applicationReserved), for: .applicationReserved)
-                control.allControlEvents
-            }
+            control.addTarget(self, action: #selector(applicationReserved), for: .applicationReserved)
         }
     }
     
-    var onSystemReserved: ot_standardClosure? {
+    var onSystemReserved: OTStandardClosure? {
         didSet {
-            if onSystemReserved != nil {
-                control.addTarget(self, action: #selector(systemReserved), for: .systemReserved)
-            }
+            control.addTarget(self, action: #selector(systemReserved), for: .systemReserved)
         }
     }
     
-    var onAllEvents: ot_standardClosure? {
+    var onAllEvents: OTStandardClosure? {
         didSet {
-            if onAllEvents != nil {
-                control.addTarget(self, action: #selector(allEvents), for: .allEvents)
-            }
+            control.addTarget(self, action: #selector(allEvents), for: .allEvents)
         }
     }
     
     // MARK: Initialization
 
-    fileprivate var control: UIControl
+    private var control: UIControl
     
-    public init(control: UIControl) {
+    init(control: UIControl) {
         self.control = control
         super.init()
     }

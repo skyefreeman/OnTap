@@ -10,7 +10,7 @@ import UIKit
 
 public extension UIControl {
     
-    @discardableResult func on(_ event: UIControlEvents, completion: @escaping ot_standardClosure) -> Self {
+    @discardableResult func on(_ event: UIControlEvents, completion: @escaping OTStandardClosure) -> Self {
         if event == .touchDown { touchHandler.onTouchDown = completion }
         else if event == .touchDownRepeat { touchHandler.onTouchDownRepeat = completion }
         else if event == .touchDragInside { touchHandler.onTouchDragInside = completion }
@@ -32,17 +32,14 @@ public extension UIControl {
         else if event == .allEvents { touchHandler.onAllEvents = completion }
         return self
     }
-}
-
-// MARK: Private
-
-public extension UIControl {
+    
+    // MARK: Private
     
     private struct AssociatedKeys {
-        static var touchHandlerKey = "ot_controlTouchHandlerKey"
+        static var touchHandlerKey = "OTControlTouchHandlerKey"
     }
     
-    fileprivate var touchHandler: UIControlTouchHandler {
+    private var touchHandler: UIControlTouchHandler {
         get {
             if let handler = objc_getAssociatedObject(self,  &AssociatedKeys.touchHandlerKey) as? UIControlTouchHandler {
                 return handler

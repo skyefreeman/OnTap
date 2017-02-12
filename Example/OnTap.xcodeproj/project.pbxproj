@@ -13,8 +13,9 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		8CBA8A486C8F3AAE7C8ED04C /* Pods_OnTap_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DD181719D8843782F783D8 /* Pods_OnTap_Tests.framework */; };
+		EE49BBBB1E4FE0F70046DE72 /* UIBarButtonItemTouchHandlerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE49BBB91E4FE0DB0046DE72 /* UIBarButtonItemTouchHandlerSpec.swift */; };
+		EE49BBC31E5029560046DE72 /* UIViewTouchHandlerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE49BBC21E5029560046DE72 /* UIViewTouchHandlerUITests.swift */; };
 		EE5496D81E4FD20000900879 /* UIControlTouchHandlerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5496D61E4FD1D300900879 /* UIControlTouchHandlerSpec.swift */; };
-		EE839CE01E160F3F00F63FA0 /* UIViewTouchHandlerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE839CDE1E160DAC00F63FA0 /* UIViewTouchHandlerSpec.swift */; };
 		F9F59F1BD088170CBC3B3F7D /* Pods_OnTap_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49868149E96A7B85D74BF019 /* Pods_OnTap_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
 			remoteInfo = OnTap;
+		};
+		EE49BBC51E5029560046DE72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = OnTap_Example;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -47,8 +55,11 @@
 		D6B58C48A22BBD40B73FC2F0 /* Pods-OnTap_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnTap_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OnTap_Tests/Pods-OnTap_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		DF1FB7657A605F8D8A59E026 /* Pods-OnTap_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnTap_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-OnTap_Example/Pods-OnTap_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E0177563AA710D8A535343F0 /* Pods-OnTap_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnTap_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OnTap_Tests/Pods-OnTap_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		EE49BBB91E4FE0DB0046DE72 /* UIBarButtonItemTouchHandlerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemTouchHandlerSpec.swift; sourceTree = "<group>"; };
+		EE49BBC01E5029560046DE72 /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE49BBC21E5029560046DE72 /* UIViewTouchHandlerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewTouchHandlerUITests.swift; sourceTree = "<group>"; };
+		EE49BBC41E5029560046DE72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE5496D61E4FD1D300900879 /* UIControlTouchHandlerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlTouchHandlerSpec.swift; sourceTree = "<group>"; };
-		EE839CDE1E160DAC00F63FA0 /* UIViewTouchHandlerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewTouchHandlerSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +76,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CBA8A486C8F3AAE7C8ED04C /* Pods_OnTap_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE49BBBD1E5029560046DE72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +115,7 @@
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for OnTap */,
 				607FACE81AFB9204008FA782 /* Tests */,
+				EE49BBC11E5029560046DE72 /* UITests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				197382E0249DC5DAB9541EF2 /* Pods */,
 				02903F3F8AD3EFD889A12FBF /* Frameworks */,
@@ -108,6 +127,7 @@
 			children = (
 				607FACD01AFB9204008FA782 /* OnTap_Example.app */,
 				607FACE51AFB9204008FA782 /* OnTap_Tests.xctest */,
+				EE49BBC01E5029560046DE72 /* UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,9 +157,9 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				EE839CDE1E160DAC00F63FA0 /* UIViewTouchHandlerSpec.swift */,
-				607FACE91AFB9204008FA782 /* Supporting Files */,
 				EE5496D61E4FD1D300900879 /* UIControlTouchHandlerSpec.swift */,
+				EE49BBB91E4FE0DB0046DE72 /* UIBarButtonItemTouchHandlerSpec.swift */,
+				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -160,6 +180,15 @@
 				482452AC1DA3AE2CB90462AE /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		EE49BBC11E5029560046DE72 /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+				EE49BBC21E5029560046DE72 /* UIViewTouchHandlerUITests.swift */,
+				EE49BBC41E5029560046DE72 /* Info.plist */,
+			);
+			path = UITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,13 +235,31 @@
 			productReference = 607FACE51AFB9204008FA782 /* OnTap_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		EE49BBBF1E5029560046DE72 /* UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE49BBC71E5029560046DE72 /* Build configuration list for PBXNativeTarget "UITests" */;
+			buildPhases = (
+				EE49BBBC1E5029560046DE72 /* Sources */,
+				EE49BBBD1E5029560046DE72 /* Frameworks */,
+				EE49BBBE1E5029560046DE72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE49BBC61E5029560046DE72 /* PBXTargetDependency */,
+			);
+			name = UITests;
+			productName = UITests;
+			productReference = EE49BBC01E5029560046DE72 /* UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
@@ -223,6 +270,12 @@
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0820;
+						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
+					EE49BBBF1E5029560046DE72 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 25GALGEBA4;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -242,6 +295,7 @@
 			targets = (
 				607FACCF1AFB9204008FA782 /* OnTap_Example */,
 				607FACE41AFB9204008FA782 /* OnTap_Tests */,
+				EE49BBBF1E5029560046DE72 /* UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,6 +312,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		607FACE31AFB9204008FA782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE49BBBE1E5029560046DE72 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -373,8 +434,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE839CE01E160F3F00F63FA0 /* UIViewTouchHandlerSpec.swift in Sources */,
 				EE5496D81E4FD20000900879 /* UIControlTouchHandlerSpec.swift in Sources */,
+				EE49BBBB1E4FE0F70046DE72 /* UIBarButtonItemTouchHandlerSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE49BBBC1E5029560046DE72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE49BBC31E5029560046DE72 /* UIViewTouchHandlerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +454,11 @@
 			isa = PBXTargetDependency;
 			target = 607FACCF1AFB9204008FA782 /* OnTap_Example */;
 			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
+		};
+		EE49BBC61E5029560046DE72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* OnTap_Example */;
+			targetProxy = EE49BBC51E5029560046DE72 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -567,6 +641,40 @@
 			};
 			name = Release;
 		};
+		EE49BBC81E5029560046DE72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 25GALGEBA4;
+				INFOPLIST_FILE = UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.skyefreeman.UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = OnTap_Example;
+			};
+			name = Debug;
+		};
+		EE49BBC91E5029560046DE72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = 25GALGEBA4;
+				INFOPLIST_FILE = UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.skyefreeman.UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = OnTap_Example;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -596,6 +704,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		EE49BBC71E5029560046DE72 /* Build configuration list for PBXNativeTarget "UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE49BBC81E5029560046DE72 /* Debug */,
+				EE49BBC91E5029560046DE72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

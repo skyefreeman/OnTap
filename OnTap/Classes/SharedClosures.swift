@@ -6,4 +6,4 @@
 //  Copyright © 2017 Skye Freeman. All rights reserved.
 //
 
-public typealias ot_standardClosure = (Void) -> Void
+public typealias OTStandardClosure = (Void) -> Void

@@ -2,8 +2,8 @@
 //  UIControlTouchHandlerSpec.swift
 //  OnTap
 //
-//  Created by Skye on 2/11/17.
-//  Copyright © 2017 CocoaPods. All rights reserved.
+//  Created by Skye Freeman on 2/11/17.
+//  Copyright © 2017 Skye Freeman. All rights reserved.
 //
 
 import Quick
