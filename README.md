@@ -1,5 +1,4 @@
-# OnTap
-
+# OnTap 🍻
 [![CI Status](http://img.shields.io/travis/Skye Freeman/OnTap.svg?style=flat)](https://travis-ci.org/Skye Freeman/OnTap)
 [![Version](https://img.shields.io/cocoapods/v/OnTap.svg?style=flat)](http://cocoapods.org/pods/OnTap)
 [![License](https://img.shields.io/cocoapods/l/OnTap.svg?style=flat)](http://cocoapods.org/pods/OnTap)
