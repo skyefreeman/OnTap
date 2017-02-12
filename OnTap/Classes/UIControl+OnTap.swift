@@ -10,98 +10,26 @@ import UIKit
 
 public extension UIControl {
     
-    @discardableResult func onTouchDown(completion: @escaping ot_standardClosure) -> Self {
-        touchHandler.onTouchDown = completion
-        return self
-    }
-    
-    @discardableResult func onTouchDownRepeat(completion: @escaping ot_standardClosure) -> Self {
-        touchHandler.onTouchDownRepeat = completion
-        return self
-    }
-    
-    @discardableResult func onTouchDragInside(completion: @escaping ot_standardClosure) -> Self {
-        touchHandler.onTouchDragInside = completion
-        return self
-    }
-    
-    @discardableResult func onTouchDragOutside(completion: @escaping ot_standardClosure) -> Self {
-        touchHandler.onTouchDragOutside = completion
-        return self
-    }
-    
-    @discardableResult func onTouchDragEnter(completion: @escaping ot_standardClosure) -> Self {
-        touchHandler.onTouchDragEnter = completion
-        return self
-    }
-    
-    @discardableResult func onTouchDragExit(completion: @escaping ot_standardClosure) -> Self {
-        touchHandler.onTouchDragExit = completion
-        return self
-    }
-    
-    @discardableResult func onTouchUpInside(completion: @escaping ot_standardClosure) -> Self {
-        touchHandler.onTouchUpInside = completion
-        return self
-    }
-    
-    @discardableResult func onTouchUpOutside(completion: @escaping ot_standardClosure) -> Self {
-        touchHandler.onTouchUpOutside = completion
-        return self
-    }
-    
-    @discardableResult func onTouchCancel(completion: @escaping ot_standardClosure) -> Self {
-        touchHandler.onTouchCancel = completion
-        return self
-    }
-    
-    @discardableResult func onValueChanged(completion: @escaping ot_standardClosure) -> Self {
-        touchHandler.onValueChanged = completion
-        return self
-    }
-    
-    @discardableResult func onEditingDidBegin(completion: @escaping ot_standardClosure) -> Self {
-        touchHandler.onEditingDidBegin = completion
-        return self
-    }
-    
-    @discardableResult func onEditingChanged(completion: @escaping ot_standardClosure) -> Self {
-        touchHandler.onEditingChanged = completion
-        return self
-    }
-    
-    @discardableResult func onEditingDidEnd(completion: @escaping ot_standardClosure) -> Self {
-        touchHandler.onEditingDidEnd = completion
-        return self
-    }
-    
-    @discardableResult func onEditingDidEndOnExit(completion: @escaping ot_standardClosure) -> Self {
-        touchHandler.onEditingDidEndOnExit = completion
-        return self
-    }
-    
-    @discardableResult func onAllTouchEvents(completion: @escaping ot_standardClosure) -> Self {
-        touchHandler.onAllTouchEvents = completion
-        return self
-    }
-    
-    @discardableResult func onAllEditingEvents(completion: @escaping ot_standardClosure) -> Self {
-        touchHandler.onAllEditingEvents = completion
-        return self
-    }
-    
-    @discardableResult func onApplicationReserved(completion: @escaping ot_standardClosure) -> Self {
-        touchHandler.onApplicationReserved = completion
-        return self
-    }
-    
-    @discardableResult func onSystemReserved(completion: @escaping ot_standardClosure) -> Self {
-        touchHandler.onSystemReserved = completion
-        return self
-    }
-    
-    @discardableResult func onAllEvents(completion: @escaping ot_standardClosure) -> Self {
-        touchHandler.onAllEvents = completion
+    @discardableResult func on(_ event: UIControlEvents, completion: @escaping ot_standardClosure) -> Self {
+        if event == .touchDown { touchHandler.onTouchDown = completion }
+        else if event == .touchDownRepeat { touchHandler.onTouchDownRepeat = completion }
+        else if event == .touchDragInside { touchHandler.onTouchDragInside = completion }
+        else if event == .touchDragOutside { touchHandler.onTouchDragOutside = completion }
+        else if event == .touchDragEnter { touchHandler.onTouchDragEnter = completion }
+        else if event == .touchDragExit { touchHandler.onTouchDragExit = completion }
+        else if event == .touchUpInside { touchHandler.onTouchUpInside = completion }
+        else if event == .touchUpOutside { touchHandler.onTouchUpOutside = completion }
+        else if event == .touchCancel { touchHandler.onTouchCancel = completion }
+        else if event == .valueChanged { touchHandler.onValueChanged = completion }
+        else if event == .editingDidBegin { touchHandler.onEditingDidBegin = completion }
+        else if event == .editingChanged { touchHandler.onEditingChanged = completion }
+        else if event == .editingDidEnd { touchHandler.onEditingDidEnd = completion }
+        else if event == .editingDidEndOnExit { touchHandler.onEditingDidEndOnExit = completion }
+        else if event == .allTouchEvents { touchHandler.onAllTouchEvents = completion }
+        else if event == .allEditingEvents { touchHandler.onAllEditingEvents = completion }
+        else if event == .applicationReserved { touchHandler.onApplicationReserved = completion }
+        else if event == .systemReserved { touchHandler.onSystemReserved = completion }
+        else if event == .allEvents { touchHandler.onAllEvents = completion }
         return self
     }
 }

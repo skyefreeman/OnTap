@@ -31,19 +31,21 @@ class ViewController: UIViewController {
         button.backgroundColor = UIColor.blue
         button.setTitle(NSLocalizedString("UIButton", comment: ""), for: .normal)
         return button
-            .onTouchDown { print("UIButton touch down!") }
-            .onTouchUpInside { print("UIButton touch up inside") }
-            .onTouchUpOutside { print("UIButton touch up outside") }
+            .on(.touchDown) { print("touch down happend!!!") }
+            .on(.touchUpInside) { print("touch up inside happend!!!") }
+            .on(.touchUpOutside) { print("touch up outside happend!!!") }
+//            .onTouchUpInside { print("UIButton touch up inside") }
+//            .onTouchUpOutside { print("UIButton touch up outside") }
     }()
 
     lazy var slider: UISlider = {
         return UISlider()
-            .onValueChanged { [unowned self] in print("slider new value: \(self.slider.value)") }
+            .on(.valueChanged) { [unowned self] in print("slider new value: \(self.slider.value)") }
     }()
 
     lazy var switchView: UISwitch = {
         return UISwitch()
-            .onValueChanged { [unowned self] in print("slider new value: \(self.switchView.isOn)") }
+            .on(.valueChanged) { [unowned self] in print("switch new value: \(self.switchView.isOn)") }
     }()
     
     lazy var label: UILabel = {

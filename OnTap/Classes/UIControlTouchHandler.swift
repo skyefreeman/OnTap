@@ -8,6 +8,12 @@
 
 import UIKit
 
+extension UIControlEvents: Hashable {
+    public var hashValue: Int {
+        return Int(rawValue)
+    }
+}
+
 internal class UIControlTouchHandler: NSObject {
     
     var onTouchDown: ot_standardClosure? {
@@ -92,7 +98,7 @@ internal class UIControlTouchHandler: NSObject {
     
     var onEditingDidBegin: ot_standardClosure? {
         didSet {
-            if onTouchDownRepeat != nil {
+            if onEditingDidBegin != nil {
                 control.addTarget(self, action: #selector(editingDidBegin), for: .editingDidBegin)
             }
         }
@@ -142,6 +148,7 @@ internal class UIControlTouchHandler: NSObject {
         didSet {
             if onApplicationReserved != nil {
                 control.addTarget(self, action: #selector(applicationReserved), for: .applicationReserved)
+                control.allControlEvents
             }
         }
     }
@@ -166,7 +173,7 @@ internal class UIControlTouchHandler: NSObject {
 
     fileprivate var control: UIControl
     
-    init(control: UIControl) {
+    public init(control: UIControl) {
         self.control = control
         super.init()
     }

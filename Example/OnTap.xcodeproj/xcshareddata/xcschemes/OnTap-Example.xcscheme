@@ -52,6 +52,16 @@
                ReferencedContainer = "container:OnTap.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "EE5496C91E4FBF8700900879"
+               BuildableName = "OnTap_UITests.xctest"
+               BlueprintName = "OnTap_UITests"
+               ReferencedContainer = "container:OnTap.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

@@ -13,6 +13,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		8CBA8A486C8F3AAE7C8ED04C /* Pods_OnTap_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DD181719D8843782F783D8 /* Pods_OnTap_Tests.framework */; };
+		EE5496D81E4FD20000900879 /* UIControlTouchHandlerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5496D61E4FD1D300900879 /* UIControlTouchHandlerSpec.swift */; };
 		EE839CE01E160F3F00F63FA0 /* UIViewTouchHandlerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE839CDE1E160DAC00F63FA0 /* UIViewTouchHandlerSpec.swift */; };
 		F9F59F1BD088170CBC3B3F7D /* Pods_OnTap_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49868149E96A7B85D74BF019 /* Pods_OnTap_Example.framework */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		D6B58C48A22BBD40B73FC2F0 /* Pods-OnTap_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnTap_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OnTap_Tests/Pods-OnTap_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		DF1FB7657A605F8D8A59E026 /* Pods-OnTap_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnTap_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-OnTap_Example/Pods-OnTap_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E0177563AA710D8A535343F0 /* Pods-OnTap_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnTap_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OnTap_Tests/Pods-OnTap_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		EE5496D61E4FD1D300900879 /* UIControlTouchHandlerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlTouchHandlerSpec.swift; sourceTree = "<group>"; };
 		EE839CDE1E160DAC00F63FA0 /* UIViewTouchHandlerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewTouchHandlerSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +139,7 @@
 			children = (
 				EE839CDE1E160DAC00F63FA0 /* UIViewTouchHandlerSpec.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
+				EE5496D61E4FD1D300900879 /* UIControlTouchHandlerSpec.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE839CE01E160F3F00F63FA0 /* UIViewTouchHandlerSpec.swift in Sources */,
+				EE5496D81E4FD20000900879 /* UIControlTouchHandlerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +545,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnTap_Example.app/OnTap_Example";
 			};
 			name = Debug;
 		};
@@ -558,6 +563,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnTap_Example.app/OnTap_Example";
 			};
 			name = Release;
 		};
