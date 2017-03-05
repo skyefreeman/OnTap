@@ -26,7 +26,7 @@ let button = UIButton()
     .on(.touchUpInside) { print("tapped!") }
 ```
 
-You can even string together multiple input actions in place:
+You can even string together multiple input actions at once.
 
 ```swift
 let button = UIButton()
@@ -37,7 +37,7 @@ let button = UIButton()
 
 ```
 
-## Usage:
+## Usage
 
 More specifically, OnTap provides a full input abstraction over all subclasses of `UIControl`, streamlines working with `UIBarbuttonItem`'s, and also makes adding `UIGestureRecognizer`'s a breeze. Essentially *everything* is now a button.
 
