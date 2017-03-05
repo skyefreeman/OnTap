@@ -1,5 +1,7 @@
 language: objective-c
 osx_image: xcode8
+install:
+- rvm get stable
 script:
 - set -o pipefail && xcodebuild -workspace Example/OnTap.xcworkspace -scheme OnTap-Example -sdk iphonesimulator   -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.0' test | xcpretty
 
