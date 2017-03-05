@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/cocoapods/l/OnTap.svg?style=flat)](http://cocoapods.org/pods/OnTap)
 [![Platform](https://img.shields.io/cocoapods/p/OnTap.svg?style=flat)](http://cocoapods.org/pods/OnTap)
 
-Drastically simplify your iOS touch input.
+Lovely closure based touch input handling for iOS.
 
 ## At a Glance
 
@@ -24,7 +24,8 @@ func buttonTouchUpInside() {
 We can instead do this: 
 
 ```swift
-let button = UIButton().on(.touchUpInside) { print("tapped!") }
+let button = UIButton()
+    .on(.touchUpInside) { print("tapped!") }
 ```
 
 You can even string together multiple input actions in place:
