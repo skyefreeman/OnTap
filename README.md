@@ -8,7 +8,7 @@ Lovely, closure-based touch input handling for iOS.
 
 ## At a Glance
 
-The Old Way™
+The old way:
 ```swift
 let button = UIButton()
 button.addTarget(self, action: #selector(buttonTouchUpInside), for: .touchUpInside)
@@ -20,7 +20,7 @@ func buttonTouchUpInside() {
 }
 ```
 
-The New Way™
+The New Way™:
 ```swift
 let button = UIButton()
     .on(.touchUpInside) { print("tapped!") }
