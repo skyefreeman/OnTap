@@ -15,7 +15,7 @@ button.addTarget(self, action: #selector(buttonTouchUpInside), for: .touchUpInsi
 /* .. somewhere else in your view or view controller */
 
 func buttonTouchUpInside() {
-print("tapped!")
+    print("tapped!")
 }
 ```
 
@@ -29,10 +29,10 @@ Simple, obvious, and to the point. You can even string together multiple input a
 
 ```swift
 let button = UIButton()
-.on(.touchDown) { print("touch down!!!") }
-.on(.touchDownRepeat) { print("touch down repeat!!!") }
-.on(.touchUpInside) { print("touch up inside!!!") }
-.on(.touchUpOutside) { print("touch up outside!!!") }
+    .on(.touchDown) { print("touch down!!!") }
+    .on(.touchDownRepeat) { print("touch down repeat!!!") }
+    .on(.touchUpInside) { print("touch up inside!!!") }
+    .on(.touchUpOutside) { print("touch up outside!!!") }
 
 ```
 
@@ -44,18 +44,18 @@ OnTap provides a full input abstraction over all subclasses of `UIControl`, stre
 
 ```swift
 let button = UIButton()
-.on(.touchUpInside) { print("touch up inside") }
-.on(.touchDown) { print("touch down") }
+    .on(.touchUpInside) { print("touch up inside") }
+    .on(.touchDown) { print("touch down") }
 
 let slider = UISlider().on(.valueChanged) { [unowned self] in
-print("slider new value: \(self.slider.value)")
+    print("slider new value: \(self.slider.value)")
 }
 ```
 
 # UIBarButtonItem
 ```swift
 let rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Right", comment: ""), style: .plain).onTap {
-print("right barButtonItem tapped!")
+    print("right barButtonItem tapped!")
 }
 ```
 
@@ -63,13 +63,12 @@ print("right barButtonItem tapped!")
 
 ```swift
 let someView = UIView()
-.on(.tap, touches: 1) { print("tapped") }
-.on(.leftSwipe, touches: 1) { print("left swipe 1 finger") }
-.on(.leftSwipe, touches: 2) { print("left swipe 2 fingers") }
-.on(.rightSwipe, touches: 1) { print("right swipe") }
-.on(.upSwipe, touches: 1) { print("up swipe") }
-.on(.downSwipe, touches: 1) { print("down swipe") }
-
+    .on(.tap, touches: 1) { print("tapped") }
+    .on(.leftSwipe, touches: 1) { print("left swipe 1 finger") }
+    .on(.leftSwipe, touches: 2) { print("left swipe 2 fingers") }
+    .on(.rightSwipe, touches: 1) { print("right swipe") }
+    .on(.upSwipe, touches: 1) { print("up swipe") }
+    .on(.downSwipe, touches: 1) { print("down swipe") }
 ```
 
 ## Installation
@@ -85,7 +84,6 @@ pod "OnTap"
 
 - Swift 3.0
 - iOS 8.0
-
 
 ## Sample Project
 
