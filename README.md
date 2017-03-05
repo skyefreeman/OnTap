@@ -21,20 +21,20 @@ print("tapped!")
 
 We can instead do this: 
 
-``swift
+```swift
 let button = UIButton().on(.touchUpInside) { print("tapped!") }
-``
+```
 
 Simple, obvious, and to the point. You can even string together multiple input actions in place:
 
-``swift
+```swift
 let button = UIButton()
 .on(.touchDown) { print("touch down!!!") }
 .on(.touchDownRepeat) { print("touch down repeat!!!") }
 .on(.touchUpInside) { print("touch up inside!!!") }
 .on(.touchUpOutside) { print("touch up outside!!!") }
 
-``
+```
 
 ## More on Usage:
 
@@ -42,7 +42,7 @@ OnTap provides a full input abstraction over all subclasses of `UIControl`, stre
 
 # UIControl
 
-``swift
+```swift
 let button = UIButton()
 .on(.touchUpInside) { print("touch up inside") }
 .on(.touchDown) { print("touch down") }
@@ -50,18 +50,18 @@ let button = UIButton()
 let slider = UISlider().on(.valueChanged) { [unowned self] in
 print("slider new value: \(self.slider.value)")
 }
-``
+```
 
 # UIBarButtonItem
-``swift
+```swift
 let rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Right", comment: ""), style: .plain).onTap {
 print("right barButtonItem tapped!")
 }
-``
+```
 
 # UIGestureRecognizer
 
-``swift
+```swift
 let someView = UIView()
 .on(.tap, touches: 1) { print("tapped") }
 .on(.leftSwipe, touches: 1) { print("left swipe 1 finger") }
@@ -70,16 +70,16 @@ let someView = UIView()
 .on(.upSwipe, touches: 1) { print("up swipe") }
 .on(.downSwipe, touches: 1) { print("down swipe") }
 
-``
+```
 
 ## Installation
 
 OnTap is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-```ruby
+````ruby
 pod "OnTap"
-```
+````
 
 ## Requirements
 
