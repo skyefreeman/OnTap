@@ -47,7 +47,6 @@ class ViewController: UIViewController {
         return UISwitch().on(.valueChanged) { [unowned self] in
             print("switch new value: \(self.switchView.isOn)")
         }
-        
     }()
     
     lazy var label: UILabel = {
@@ -78,7 +77,7 @@ class ViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-
+        
         let sharedSize = CGSize(width: view.width/2, height: view.height/2)
         button.frame = CGRect(x: 0, y: 0, width: sharedSize.width, height: sharedSize.height)
         slider.frame = CGRect(x: view.width/2, y: 0, width: sharedSize.width, height: sharedSize.height)
