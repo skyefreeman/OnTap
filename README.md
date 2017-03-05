@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/cocoapods/l/OnTap.svg?style=flat)](http://cocoapods.org/pods/OnTap)
 [![Platform](https://img.shields.io/cocoapods/p/OnTap.svg?style=flat)](http://cocoapods.org/pods/OnTap)
 
-OnTap simplifies touch input in iOS apps.
+Drastically simplify your iOS touch input.
 
 ## At a Glance
 
