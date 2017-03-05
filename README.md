@@ -4,9 +4,11 @@
 [![License](https://img.shields.io/cocoapods/l/OnTap.svg?style=flat)](http://cocoapods.org/pods/OnTap)
 [![Platform](https://img.shields.io/cocoapods/p/OnTap.svg?style=flat)](http://cocoapods.org/pods/OnTap)
 
-## What is OnTap?
+OnTap simplifies touch input in iOS apps.
 
-OnTap simplifies working with touch input in iOS apps. Instead of:
+## At a Glance
+
+Instead of:
 
 ```swift
 let button = UIButton()
@@ -25,7 +27,7 @@ We can instead do this:
 let button = UIButton().on(.touchUpInside) { print("tapped!") }
 ```
 
-Simple, obvious, and to the point. You can even string together multiple input actions in place:
+You can even string together multiple input actions in place:
 
 ```swift
 let button = UIButton()
@@ -36,11 +38,11 @@ let button = UIButton()
 
 ```
 
-## More on Usage:
+## Usage:
 
-OnTap provides a full input abstraction over all subclasses of `UIControl`, streamlines working with `UIBarbuttonItem`'s, and also makes adding `UIGestureRecognizer`'s a breeze. Essentially *everything* is now a button.
+More specifically, OnTap provides a full input abstraction over all subclasses of `UIControl`, streamlines working with `UIBarbuttonItem`'s, and also makes adding `UIGestureRecognizer`'s a breeze. Essentially *everything* is now a button.
 
-# UIControl
+## UIControl
 
 ```swift
 let button = UIButton()
@@ -52,14 +54,14 @@ let slider = UISlider().on(.valueChanged) { [unowned self] in
 }
 ```
 
-# UIBarButtonItem
+## UIBarButtonItem
 ```swift
 let rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Right", comment: ""), style: .plain).onTap {
     print("right barButtonItem tapped!")
 }
 ```
 
-# UIGestureRecognizer
+## UIGestureRecognizer
 
 ```swift
 let someView = UIView()
