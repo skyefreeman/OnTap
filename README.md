@@ -4,6 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/OnTap.svg?style=flat)](http://cocoapods.org/pods/OnTap)
 [![License](https://img.shields.io/cocoapods/l/OnTap.svg?style=flat)](http://cocoapods.org/pods/OnTap)
 [![Platform](https://img.shields.io/cocoapods/p/OnTap.svg?style=flat)](http://cocoapods.org/pods/OnTap)
+[![Build Status](https://travis-ci.org/skyefreeman/OnTap.svg?branch=master)](https://travis-ci.org/skyefreeman/OnTap)
 
 Lovely, closure-based touch input handling for iOS.
 
