@@ -1,7 +1,7 @@
 language: objective-c
 osx_image: xcode8
 before_install:
-   - SIMULATOR_ID=$(xcrun instruments -s | grep -o "iPhone 7 (10.0) \[.*\]" | grep -o "\[.*\]" | sed "s/^\[\(.*\)\]$/\1/")
+   - SIMULATOR_ID=$(xcrun instruments -s | grep -o "iPhone 7 (\[.*\]" | grep -o "\[.*\]" | sed "s/^\[\(.*\)\]$/\1/")
 script:
    - open -a "Simulator" --args -CurrentDeviceUDID $SIMULATOR_ID
    - set -o pipefail && xcodebuild -workspace Example/OnTap.xcworkspace -scheme OnTap-Example -sdk iphonesimulator   -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.0' test | xcpretty
