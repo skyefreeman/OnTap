@@ -84,7 +84,7 @@ pod "OnTap"
 ## Requirements
 
 - Swift 3.0
-- iOS 8.0+
+- iOS 8.0
 
 
 ## Sample Project
