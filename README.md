@@ -4,12 +4,11 @@
 [![License](https://img.shields.io/cocoapods/l/OnTap.svg?style=flat)](http://cocoapods.org/pods/OnTap)
 [![Platform](https://img.shields.io/cocoapods/p/OnTap.svg?style=flat)](http://cocoapods.org/pods/OnTap)
 
-Lovely closure based touch input handling for iOS.
+Lovely closure-based touch input handling for iOS.
 
 ## At a Glance
 
-Instead of:
-
+The Old Way™
 ```swift
 let button = UIButton()
 button.addTarget(self, action: #selector(buttonTouchUpInside), for: .touchUpInside)
@@ -21,8 +20,7 @@ func buttonTouchUpInside() {
 }
 ```
 
-We can instead do this: 
-
+The New Way™
 ```swift
 let button = UIButton()
     .on(.touchUpInside) { print("tapped!") }
