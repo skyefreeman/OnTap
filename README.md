@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/cocoapods/l/OnTap.svg?style=flat)](http://cocoapods.org/pods/OnTap)
 [![Platform](https://img.shields.io/cocoapods/p/OnTap.svg?style=flat)](http://cocoapods.org/pods/OnTap)
 
-Lovely closure-based touch input handling for iOS.
+Lovely, closure-based touch input handling for iOS.
 
 ## At a Glance
 
