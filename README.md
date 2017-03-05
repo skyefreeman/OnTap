@@ -42,7 +42,7 @@ let button = UIButton()
 
 More specifically, OnTap provides a full input abstraction over all subclasses of `UIControl`, streamlines working with `UIBarbuttonItem`'s, and also makes adding `UIGestureRecognizer`'s a breeze. Essentially *everything* is now a button.
 
-## UIControl
+### UIControl
 
 ```swift
 let button = UIButton()
@@ -54,14 +54,14 @@ let slider = UISlider().on(.valueChanged) { [unowned self] in
 }
 ```
 
-## UIBarButtonItem
+### UIBarButtonItem
 ```swift
 let rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Right", comment: ""), style: .plain).onTap {
     print("right barButtonItem tapped!")
 }
 ```
 
-## UIGestureRecognizer
+### UIGestureRecognizer
 
 ```swift
 let someView = UIView()
