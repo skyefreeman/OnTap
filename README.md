@@ -20,7 +20,7 @@ func buttonTouchUpInside() {
 }
 ```
 
-The New Way™:
+The OnTap way:
 ```swift
 let button = UIButton()
     .on(.touchUpInside) { print("tapped!") }
