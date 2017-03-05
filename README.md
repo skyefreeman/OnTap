@@ -1,7 +1,6 @@
 # OnTap 🍻
 ![Swift](https://img.shields.io/badge/Swift-3.0-orange.svg)
 [![CocoaPods](http://img.shields.io/cocoapods/v/OnTap.svg)](https://cocoapods.org/pods/OnTap)
-[![Version](https://img.shields.io/cocoapods/v/OnTap.svg?style=flat)](http://cocoapods.org/pods/OnTap)
 [![License](https://img.shields.io/cocoapods/l/OnTap.svg?style=flat)](http://cocoapods.org/pods/OnTap)
 [![Platform](https://img.shields.io/cocoapods/p/OnTap.svg?style=flat)](http://cocoapods.org/pods/OnTap)
 [![Build Status](https://travis-ci.org/skyefreeman/OnTap.svg?branch=master)](https://travis-ci.org/skyefreeman/OnTap)
