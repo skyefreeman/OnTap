@@ -17,17 +17,17 @@ public extension UIBarButtonItem {
     
     convenience init(barButtonSystemItem: UIBarButtonSystemItem, onTap: @escaping OTStandardClosure) {
         self.init(barButtonSystemItem: barButtonSystemItem, target: nil, action: nil)
-        self.touchHandler = UIBarButtonItemTouchHandler(barButtonItem: self, onTap: onTap)
+        touchHandler = UIBarButtonItemTouchHandler(barButtonItem: self, onTap: onTap)
     }
     
     convenience init(image: UIImage?, style: UIBarButtonItemStyle, onTap: @escaping OTStandardClosure) {
         self.init(image: image, style: style, target: nil, action: nil)
-        self.touchHandler = UIBarButtonItemTouchHandler(barButtonItem: self, onTap: onTap)
+        touchHandler = UIBarButtonItemTouchHandler(barButtonItem: self, onTap: onTap)
     }
     
     convenience init(title: String?, style: UIBarButtonItemStyle, onTap: @escaping OTStandardClosure) {
         self.init(title: title, style: style, target: nil, action: nil)
-        self.touchHandler = UIBarButtonItemTouchHandler(barButtonItem: self, onTap: onTap)
+        touchHandler = UIBarButtonItemTouchHandler(barButtonItem: self, onTap: onTap)
     }
     
     // MARK: Private

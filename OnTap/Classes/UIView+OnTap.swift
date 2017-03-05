@@ -11,7 +11,7 @@ import UIKit
 public extension UIView {
     
     @discardableResult func on(_ event: OTViewEvent, touches: Int, completion: @escaping OTStandardClosure) -> Self {
-        var wrapper = WrappedEvent(event: event, touches: touches)
+        let wrapper = WrappedEvent(event: event, touches: touches)
         touchHandler.recognizers[wrapper] = completion
         isUserInteractionEnabled = true
         return self
@@ -29,8 +29,8 @@ public extension UIView {
                 return handler
             }
             else {
-                touchHandler = UIViewTouchHandler(view: self)
-                return touchHandler
+                self.touchHandler = UIViewTouchHandler(view: self)
+                return self.touchHandler
             }
         }
         set {
