@@ -8,7 +8,7 @@
 
 OnTap simplifies working with touch input in iOS apps. Instead of:
 
-``swift
+```swift
 let button = UIButton()
 button.addTarget(self, action: #selector(buttonTouchUpInside), for: .touchUpInside)
 
@@ -17,7 +17,7 @@ button.addTarget(self, action: #selector(buttonTouchUpInside), for: .touchUpInsi
 func buttonTouchUpInside() {
 print("tapped!")
 }
-``
+```
 
 We can instead do this: 
 
