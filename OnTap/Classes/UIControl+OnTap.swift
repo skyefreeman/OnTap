@@ -11,25 +11,28 @@ import UIKit
 public extension UIControl {
     
     @discardableResult func on(_ event: UIControlEvents, completion: @escaping OTStandardClosure) -> Self {
-        if event == .touchDown { touchHandler.onTouchDown = completion }
-        else if event == .touchDownRepeat { touchHandler.onTouchDownRepeat = completion }
-        else if event == .touchDragInside { touchHandler.onTouchDragInside = completion }
-        else if event == .touchDragOutside { touchHandler.onTouchDragOutside = completion }
-        else if event == .touchDragEnter { touchHandler.onTouchDragEnter = completion }
-        else if event == .touchDragExit { touchHandler.onTouchDragExit = completion }
-        else if event == .touchUpInside { touchHandler.onTouchUpInside = completion }
-        else if event == .touchUpOutside { touchHandler.onTouchUpOutside = completion }
-        else if event == .touchCancel { touchHandler.onTouchCancel = completion }
-        else if event == .valueChanged { touchHandler.onValueChanged = completion }
-        else if event == .editingDidBegin { touchHandler.onEditingDidBegin = completion }
-        else if event == .editingChanged { touchHandler.onEditingChanged = completion }
-        else if event == .editingDidEnd { touchHandler.onEditingDidEnd = completion }
-        else if event == .editingDidEndOnExit { touchHandler.onEditingDidEndOnExit = completion }
-        else if event == .allTouchEvents { touchHandler.onAllTouchEvents = completion }
-        else if event == .allEditingEvents { touchHandler.onAllEditingEvents = completion }
-        else if event == .applicationReserved { touchHandler.onApplicationReserved = completion }
-        else if event == .systemReserved { touchHandler.onSystemReserved = completion }
-        else if event == .allEvents { touchHandler.onAllEvents = completion }
+        switch event {
+        case UIControlEvents.touchDown: touchHandler.onTouchDown = completion
+        case UIControlEvents.touchDownRepeat: touchHandler.onTouchDownRepeat = completion
+        case UIControlEvents.touchDragInside: touchHandler.onTouchDragInside = completion
+        case UIControlEvents.touchDragOutside: touchHandler.onTouchDragOutside = completion
+        case UIControlEvents.touchDragEnter: touchHandler.onTouchDragEnter = completion
+        case UIControlEvents.touchDragExit: touchHandler.onTouchDragExit = completion
+        case UIControlEvents.touchUpInside: touchHandler.onTouchUpInside = completion
+        case UIControlEvents.touchUpOutside: touchHandler.onTouchUpOutside = completion
+        case UIControlEvents.touchCancel: touchHandler.onTouchCancel = completion
+        case UIControlEvents.valueChanged: touchHandler.onValueChanged = completion
+        case UIControlEvents.editingDidBegin: touchHandler.onEditingDidBegin = completion
+        case UIControlEvents.editingChanged: touchHandler.onEditingChanged = completion
+        case UIControlEvents.editingDidEnd: touchHandler.onEditingDidEnd = completion
+        case UIControlEvents.editingDidEndOnExit: touchHandler.onEditingDidEndOnExit = completion
+        case UIControlEvents.allTouchEvents: touchHandler.onAllTouchEvents = completion
+        case UIControlEvents.allEditingEvents: touchHandler.onAllEditingEvents = completion
+        case UIControlEvents.applicationReserved: touchHandler.onApplicationReserved = completion
+        case UIControlEvents.systemReserved: touchHandler.onSystemReserved = completion
+        case UIControlEvents.allEvents: touchHandler.onAllEvents = completion
+        default: assertionFailure("Missing a UIControlEvents option.")
+        }
         return self
     }
     
