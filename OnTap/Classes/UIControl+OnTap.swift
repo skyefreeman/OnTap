@@ -31,7 +31,7 @@ public extension UIControl {
         case UIControlEvents.applicationReserved: touchHandler.onApplicationReserved = completion
         case UIControlEvents.systemReserved: touchHandler.onSystemReserved = completion
         case UIControlEvents.allEvents: touchHandler.onAllEvents = completion
-        default: assertionFailure("Missing a UIControlEvents option.")
+        default: assertionFailure("Missing a UIControlEvents option. \(event)")
         }
         return self
     }

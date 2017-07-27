@@ -74,16 +74,21 @@ internal class UIViewTouchHandler: NSObject {
 fileprivate extension UIViewTouchHandler {
     
     @objc fileprivate func gestureRecognized(gesture: UIGestureRecognizer) {
-        if let tapGesture = gesture as? UITapGestureRecognizer {
+        
+        switch gesture {
+        
+        case let tapGesture as UITapGestureRecognizer:
             let wrapper = WrappedEvent(event: .tap, touches: tapGesture.numberOfTouches)
             recognizers[wrapper]?()
-        }
-        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+        
+        case let swipeGesture as UISwipeGestureRecognizer:
             let wrapper = WrappedEvent(
                 event: OTViewEvent.event(for: swipeGesture.direction),
-                touches: swipeGesture.numberOfTouches
-            )
+                touches: swipeGesture.numberOfTouches)
             recognizers[wrapper]?()
+        
+        default:
+            assertionFailure("An unsupported gesture recognizer was used")
         }
     }
     
