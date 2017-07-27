@@ -23,25 +23,25 @@ class UIViewTouchHandlerUITests: XCTestCase {
     }
     
     func testInteractingWithViewTriggersCallbacks() {
-        app.staticTexts["Tap me!"].tap()
+        app.staticTexts["Tap or swipe!"].tap()
         
         let afterTapString = "tapped"
         XCTAssert(app.staticTexts[afterTapString].exists)
         app.staticTexts[afterTapString].swipeLeft()
         
-        let afterSwipeLeftString = "left"
+        let afterSwipeLeftString = "left swipe"
         XCTAssert(app.staticTexts[afterSwipeLeftString].exists)
         app.staticTexts[afterSwipeLeftString].swipeRight()
         
-        let afterSwipeRightString = "right"
+        let afterSwipeRightString = "right swipe"
         XCTAssert(app.staticTexts[afterSwipeRightString].exists)
         app.staticTexts[afterSwipeRightString].swipeUp()
         
-        let afterSwipeUpString = "up"
+        let afterSwipeUpString = "upward swipe"
         XCTAssert(app.staticTexts[afterSwipeUpString].exists)
         app.staticTexts[afterSwipeUpString].swipeDown()
         
-        let afterSwipeDownString = "down"
+        let afterSwipeDownString = "downward swipe"
         XCTAssert(app.staticTexts[afterSwipeDownString].exists)
     }
     
